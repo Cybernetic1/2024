@@ -7,7 +7,7 @@
    viewBox="0 0 297 210"
    version="1.1"
    id="svg5"
-   inkscape:version="1.2.2 (1:1.2.2+202212051550+b0a8486541)"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
    sodipodi:docname="logic-inference-as-mappings.svg"
    xml:space="preserve"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -24,10 +24,10 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="1"
-     inkscape:cx="291"
-     inkscape:cy="393.5"
+     inkscape:cx="572.5"
+     inkscape:cy="393"
      inkscape:window-width="1920"
-     inkscape:window-height="1055"
+     inkscape:window-height="1059"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -35,7 +35,12 @@
      inkscape:snap-global="false"
      inkscape:showpageshadow="0"
      inkscape:deskcolor="#d1d1d1" /><defs
-     id="defs2"><marker
+     id="defs2"><rect
+       x="488.09113"
+       y="28.914108"
+       width="607.10516"
+       height="60.001174"
+       id="rect8729" /><marker
        style="overflow:visible"
        id="TriangleStart"
        refX="0"
@@ -385,8 +390,8 @@
        id="rect31-36-2-2-9"
        width="4.8527861"
        height="11.324187"
-       x="149.43126"
-       y="23.652729" /><rect
+       x="117.68124"
+       y="18.361063" /><rect
        style="fill:#ffdd55;stroke:#000000;stroke-width:0.423333;stroke-linecap:round;-inkscape-stroke:none;stop-color:#000000"
        id="rect31-3-7-9"
        width="4.8527861"
@@ -421,18 +426,18 @@
        y="105.38605" /><path
        id="rect31-6-3"
        style="fill:#ff9955;stroke:#000000;stroke-width:0.423333;stroke-linecap:round;stop-color:#000000"
-       d="m 76.154856,53.339977 h 4.852786 v 11.324174 h -4.852786 z"
+       d="M 44.404854,48.04831 H 49.25764 V 59.372484 H 44.404854 Z"
        sodipodi:nodetypes="ccccc" /><path
        id="rect31-6-6-7"
        style="fill:#ff0000;stroke:#000000;stroke-width:0.423333;stroke-linecap:round;stop-color:#000000"
-       d="m 92.029862,53.339977 h 4.852786 v 11.324174 h -4.852786 z"
+       d="m 60.27986,48.04831 h 4.852786 V 59.372484 H 60.27986 Z"
        sodipodi:nodetypes="ccccc" /><rect
        style="fill:#ff9955;stroke:#000000;stroke-width:0.423333;stroke-linecap:round;-inkscape-stroke:none;stop-color:#000000"
        id="rect31-6-2-5"
        width="4.8527861"
        height="11.324187"
-       x="59.75069"
-       y="53.34" /><rect
+       x="28.000685"
+       y="48.048332" /><rect
        style="fill:#ffffff;stroke:none;stroke-width:0.264999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
        id="rect6607"
        width="45.465881"
@@ -497,15 +502,15 @@
        d="m 149.22507,102.74197 c -0.31682,20.57629 13.33189,18.65358 54.26576,18.52598"
        id="path3734-6" /><path
        style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.795, 0.795;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow2Lend-36-2)"
-       d="M 78.852165,53.55792 C 77.832615,36.259402 135.15298,65.790649 134.68685,36.463668"
+       d="M 47.102163,48.266253 C 46.082613,30.967735 103.40296,60.498982 102.93683,31.172001"
        id="path4350"
        sodipodi:nodetypes="cc" /><path
        style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.795, 0.795;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 62.52093,53.214666 c 1.272791,-8.818435 4.575702,-5.943729 22.703431,-5.758679"
+       d="M 30.770928,47.922999 C 32.043719,39.104564 35.34663,41.97927 53.474359,42.16432"
        id="path4350-6"
        sodipodi:nodetypes="cc" /><path
        style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend-36-2)"
-       d="M 94.638481,53.580702 C 93.452156,29.825626 125.14409,57.020436 126.45131,36.858972"
+       d="M 62.888479,48.289035 C 61.702154,24.533959 93.394076,51.728769 94.701296,31.567305"
        id="path3734-6-8"
        sodipodi:nodetypes="cc" /><path
        sodipodi:nodetypes="csscssccsscsscc"
@@ -556,7 +561,7 @@
          x="177.99858"
          y="118.53254">query</tspan></text><g
        inkscape:label=""
-       transform="translate(121.33064,26.912723)"
+       transform="translate(89.580626,21.621056)"
        id="g4240"><g
    id="surface1"
    transform="matrix(0.705556,0,0,0.705556,-203.53,-60.9837)">
@@ -629,4 +634,55 @@
       </g>
     </g>
   </g>
-</g></g></svg>
+</g><text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;white-space:pre;inline-size:148.715;stroke-width:0.264583"
+       x="135.07578"
+       y="18.263861"
+       id="text693"
+       transform="translate(74.083337)"><tspan
+         x="135.07578"
+         y="18.263861"
+         id="tspan23381"><tspan
+           style="text-align:start;text-anchor:start"
+           id="tspan23373">GPT </tspan><tspan
+           style="text-align:start;text-anchor:start"
+           id="tspan23375">它一个个字弹出来，会不会就是</tspan><tspan
+           style="text-align:start;text-anchor:start"
+           id="tspan23377"> </tspan><tspan
+           style="text-align:start;text-anchor:start"
+           id="tspan23379">thoughts?
+</tspan></tspan><tspan
+         x="135.07578"
+         y="27.788866"
+         id="tspan23389"><tspan
+           style="text-align:start;text-anchor:start"
+           id="tspan23383">Thought </tspan><tspan
+           style="text-align:start;text-anchor:start"
+           id="tspan23385">是一种不完整的思想？</tspan><tspan
+           style="text-align:start;text-anchor:start"
+           id="tspan23387">  
+</tspan></tspan><tspan
+         x="135.07578"
+         y="37.313872"
+         id="tspan23397"><tspan
+           style="text-align:start;text-anchor:start"
+           id="tspan23391">Micro-thoughts </tspan><tspan
+           style="text-align:start;text-anchor:start"
+           id="tspan23393">会不会是更好的形式？</tspan><tspan
+           style="text-align:start;text-anchor:start"
+           id="tspan23395">
+</tspan></tspan><tspan
+         x="135.07578"
+         y="46.838877"
+         id="tspan23405"><tspan
+           style="text-align:start;text-anchor:start"
+           id="tspan23399">那就是一种</tspan><tspan
+           style="text-align:start;text-anchor:start"
+           id="tspan23401"> </tspan><tspan
+           style="text-align:start;text-anchor:start"
+           id="tspan23403">context modifier</tspan></tspan></text><text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text8727"
+       style="font-weight:300;font-size:26.6667px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect8729)" /></g></svg>
