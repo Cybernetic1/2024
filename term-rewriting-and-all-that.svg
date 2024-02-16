@@ -830,74 +830,78 @@
          y="26.674194">《Term Rewriting and All That》解读</tspan></text>
     <text
        xml:space="preserve"
-       style="font-weight:300;font-size:6.35px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:139.486;stroke-width:0.264583"
+       style="font-weight:300;font-size:6.35px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:142.701;display:inline;stroke-width:0.264583"
        x="203.89668"
        y="1.4284792"
        id="text1027"><tspan
          x="203.89668"
          y="1.4284792"
-         id="tspan1856">1）word problem 是什么？
+         id="tspan2088">1）word problem 是什么？
 </tspan><tspan
          x="203.89668"
          y="9.3659793"
-         id="tspan1858">is defined for an equational theory E.
+         id="tspan2090">is defined for an equational theory E.
 </tspan><tspan
          x="203.89668"
          y="17.303479"
-         id="tspan1860">is the problem of deciding whether s = t
+         id="tspan2092">is the problem of deciding whether s = t
 </tspan><tspan
          x="203.89668"
          y="25.240978"
-         id="tspan1862">
+         id="tspan2094">
 </tspan><tspan
          x="203.89668"
          y="33.178478"
-         id="tspan1864">2）Gröbner 基为什么等价于 word problem？
+         id="tspan2096">2）Gröbner 基为什么等价于 word problem？
 </tspan><tspan
          x="203.89668"
          y="41.115978"
-         id="tspan1868">to ask <tspan
+         id="tspan2100">to ask <tspan
    style="font-weight:normal;-inkscape-font-specification:'Alibaba PuHuiTi'"
-   id="tspan1866">ideal congruence</tspan> f =? g means f-g ∈? J
+   id="tspan2098">ideal congruence</tspan> f =? g means f - g ∈? J
 </tspan><tspan
          x="203.89668"
          y="49.053478"
-         id="tspan1870">which is ideal membership problem
+         id="tspan2102">which is ideal membership problem
 </tspan><tspan
          x="203.89668"
          y="56.990978"
-         id="tspan1872">a polynomial can be regarded as a rewrite rule
+         id="tspan2104">a polynomial can be regarded as a rewrite rule
 </tspan><tspan
          x="203.89668"
          y="64.928478"
-         id="tspan1874">because f = 0, we can take the &quot;largest </tspan><tspan
+         id="tspan2106">because f = 0, we can take the &quot;largest monomial&quot; </tspan><tspan
          x="203.89668"
          y="72.865978"
-         id="tspan1876">monomial&quot; in f as the LHS, and the rest of f as </tspan><tspan
+         id="tspan2108">in f as the LHS, and the rest of f as RHS.
+</tspan><tspan
          x="203.89668"
          y="80.803478"
-         id="tspan1878">RHS.
+         id="tspan2110">In other words:  ideal = set of rules
 </tspan><tspan
          x="203.89668"
          y="88.740978"
-         id="tspan1880">In other words:  ideal = set of rules
-</tspan><tspan
+         id="tspan2112">We ask if a polynomial can be rewritten by the set </tspan><tspan
          x="203.89668"
          y="96.678478"
-         id="tspan1882">We ask if a polynomial can be rewritten by the </tspan><tspan
+         id="tspan2114">of rules to another form.  This is similar to logic </tspan><tspan
          x="203.89668"
          y="104.61598"
-         id="tspan1884">set of rules to another form.  This is similar to </tspan><tspan
+         id="tspan2116">deduction.
+</tspan><tspan
          x="203.89668"
          y="112.55348"
-         id="tspan1886">logic deduction.
+         id="tspan2118">
 </tspan><tspan
          x="203.89668"
          y="120.49098"
-         id="tspan1888">
+         id="tspan2120">3）逻辑 等价于 polynomial 的什么？
 </tspan><tspan
          x="203.89668"
          y="128.42848"
-         id="tspan1890">3）逻辑 等价于 polynomial 的什么？</tspan></text>
+         id="tspan2122">taking the cue that Huet's higher-order unification </tspan><tspan
+         x="203.89668"
+         y="136.36598"
+         id="tspan2124">= Buchberger algorithm, </tspan></text>
   </g>
 </svg>
