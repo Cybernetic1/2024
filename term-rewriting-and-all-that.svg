@@ -7,7 +7,7 @@
    viewBox="0 0 151.9119 137.11547"
    version="1.1"
    id="svg8"
-   inkscape:version="1.2.2 (1:1.2.2+202212051550+b0a8486541)"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
    sodipodi:docname="term-rewriting-and-all-that.svg"
    inkscape:export-filename="term-rewriting-and-all-that.png"
    inkscape:export-xdpi="192"
@@ -225,13 +225,13 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="818"
-     inkscape:cy="255.5"
+     inkscape:cx="818.5"
+     inkscape:cy="255"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1057"
+     inkscape:window-height="1059"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -836,72 +836,86 @@
        id="text1027"><tspan
          x="203.89668"
          y="1.4284792"
-         id="tspan2088">1）word problem 是什么？
+         id="tspan2204">1）word problem 是什么？
 </tspan><tspan
          x="203.89668"
          y="9.3659793"
-         id="tspan2090">is defined for an equational theory E.
+         id="tspan2206">is defined for an equational theory E.
 </tspan><tspan
          x="203.89668"
          y="17.303479"
-         id="tspan2092">is the problem of deciding whether s = t
+         id="tspan2208">is the problem of deciding whether s = t
 </tspan><tspan
          x="203.89668"
          y="25.240978"
-         id="tspan2094">
+         id="tspan2210">
 </tspan><tspan
          x="203.89668"
          y="33.178478"
-         id="tspan2096">2）Gröbner 基为什么等价于 word problem？
+         id="tspan2212">2）Gröbner 基为什么等价于 word problem？
 </tspan><tspan
          x="203.89668"
          y="41.115978"
-         id="tspan2100">to ask <tspan
+         id="tspan2216">to ask <tspan
    style="font-weight:normal;-inkscape-font-specification:'Alibaba PuHuiTi'"
-   id="tspan2098">ideal congruence</tspan> f =? g means f - g ∈? J
+   id="tspan2214">ideal congruence</tspan> f =? g means f - g ∈? J
 </tspan><tspan
          x="203.89668"
          y="49.053478"
-         id="tspan2102">which is ideal membership problem
+         id="tspan2218">which is ideal membership problem
 </tspan><tspan
          x="203.89668"
          y="56.990978"
-         id="tspan2104">a polynomial can be regarded as a rewrite rule
+         id="tspan2220">a polynomial can be regarded as a rewrite rule
 </tspan><tspan
          x="203.89668"
          y="64.928478"
-         id="tspan2106">because f = 0, we can take the &quot;largest monomial&quot; </tspan><tspan
+         id="tspan2222">because f = 0, we can take the &quot;largest monomial&quot; </tspan><tspan
          x="203.89668"
          y="72.865978"
-         id="tspan2108">in f as the LHS, and the rest of f as RHS.
+         id="tspan2224">in f as the LHS, and the rest of f as RHS.
 </tspan><tspan
          x="203.89668"
          y="80.803478"
-         id="tspan2110">In other words:  ideal = set of rules
+         id="tspan2226">In other words:  ideal = set of rules
 </tspan><tspan
          x="203.89668"
          y="88.740978"
-         id="tspan2112">We ask if a polynomial can be rewritten by the set </tspan><tspan
+         id="tspan2228">We ask if a polynomial can be rewritten by the set </tspan><tspan
          x="203.89668"
          y="96.678478"
-         id="tspan2114">of rules to another form.  This is similar to logic </tspan><tspan
+         id="tspan2230">of rules to another form.  This is similar to logic </tspan><tspan
          x="203.89668"
          y="104.61598"
-         id="tspan2116">deduction.
+         id="tspan2232">deduction.
 </tspan><tspan
          x="203.89668"
          y="112.55348"
-         id="tspan2118">
+         id="tspan2234">
 </tspan><tspan
          x="203.89668"
          y="120.49098"
-         id="tspan2120">3）逻辑 等价于 polynomial 的什么？
-</tspan><tspan
+         id="tspan2236">这里有个重要的问题是：polynomial reduction 似</tspan><tspan
          x="203.89668"
          y="128.42848"
-         id="tspan2122">taking the cue that Huet's higher-order unification </tspan><tspan
+         id="tspan2238">乎不能应付 logic variables，它只能做简单的 符号</tspan><tspan
          x="203.89668"
          y="136.36598"
-         id="tspan2124">= Buchberger algorithm, </tspan></text>
+         id="tspan2240">的改写。
+</tspan><tspan
+         x="203.89668"
+         y="144.30348"
+         id="tspan2242">
+</tspan><tspan
+         x="203.89668"
+         y="152.24098"
+         id="tspan2244">3）逻辑 等价于 polynomial 的什么？
+</tspan><tspan
+         x="203.89668"
+         y="160.17848"
+         id="tspan2246">taking the cue that Huet's higher-order unification </tspan><tspan
+         x="203.89668"
+         y="168.11598"
+         id="tspan2248">= Buchberger algorithm, </tspan></text>
   </g>
 </svg>
