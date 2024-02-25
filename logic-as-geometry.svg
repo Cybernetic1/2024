@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    sodipodi:docname="logic-as-geometry.svg"
-   inkscape:version="1.2.2 (1:1.2.2+202212051550+b0a8486541)"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,14 +25,15 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="1"
-     inkscape:cx="397"
-     inkscape:cy="515.5"
+     inkscape:cx="397.5"
+     inkscape:cy="516"
      inkscape:window-width="1920"
-     inkscape:window-height="1057"
+     inkscape:window-height="1059"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer1"
+     inkscape:pageshadow="2" />
   <defs
      id="defs2">
     <marker
@@ -758,12 +759,12 @@
          style="stroke-width:0.264583"
          x="33.160282"
          y="47.11087"
-         id="tspan2981">其 maximal ideal 是原子命题。</tspan><tspan
+         id="tspan221">每一点 P 是 maximal ideal = 命题的并。</tspan><tspan
          sodipodi:role="line"
          style="stroke-width:0.264583"
          x="33.160282"
          y="55.04837"
-         id="tspan2983">spec A = 所有 prime ideals 的空间 = 原子命题空间</tspan><tspan
+         id="tspan2983">spec A = 所有 prime ideals 的空间 = 命题组成的状态空间</tspan><tspan
          sodipodi:role="line"
          style="stroke-width:0.264583"
          x="33.160282"
