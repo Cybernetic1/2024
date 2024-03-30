@@ -297,44 +297,44 @@ In fact, the \textbf{Transformer} has the ability to learn very complex syntacti
 
 \cc{模态逻辑 (modal logic) 与 可能世界语义 (possible world semantics) 是一种很 powerful 的逻辑形式，它可以处理很多哲学逻辑上的课题。 以前我学习符号逻辑 AI 时，比较忽略它，因为要在 计算机上实现 模态逻辑引擎 比较麻烦。  随着 AGI 越来越接近，我觉得有必要更仔细研究一下。
 }{
-Modal logic and possible world semantics are a very powerful form of logic that can handle many topics in philosophical logic. When I studied symbolic logic AI in the past, I ignored it because it was troublesome to implement a modal logic engine on a computer. As AGI gets closer, I feel the need to take a closer look.
+Modal logic and possible world semantics are very powerful forms of logic that can handle many problems in philosophical logic.  When I studied symbolic logic AI in the past, I mostly ignored it because it was troublesome to implement a modal logic engine on a computer.  As AGI gets closer to reality, I feel the need to take a closer look to modal logics.
 }
 
 \cc{这篇文章的重点是：模态逻辑 具有 层 (sheaf) 和 topos 的结构。 事实上，topos semantics 是逻辑语义学的 「最新」 发展 （其实也很旧了 哈），有说 topos 语义能处理几乎所有我们知道的逻辑语义（究竟有什么例外我也不知）。
 }{
-The focus of this article is: modal logic has a structure of sheafs and topos. In fact, topos semantics is the "latest" development of logical semantics (it's actually very old, ha). It is said that topos semantics can handle almost all the logical semantics we know (I don't know what exceptions there are).
+The main point of this section is: modal logic has a structure of sheaves and toposes.  Topos semantics is the ``latest'' development of logical semantics (it's actually quite old, haha). It is said that topos semantics can handle almost all the logical semantics we know (though I don't even know what are the exceptions).
 }
 
 \cc{以下这个图就是精要： 
 }{
-The following picture is the essence:
+The basic picture is this:
 }
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.7]{possible-worlds-as-sheaf.png}}}
 \end{equation}
 
 \begin{itemize}
-\cc{	\item 底下的绿色集合 纯粹是 每个可能世界的指标 (index), 例如 $ N = \{ 1,2,3,4 \} $
+\cc{	\item 底下的绿色集合 纯粹是 每个可能世界的指标 (index), 例如 $ \mathbb{N} = \{ 1,2,3,4 \} $
 }{
- \item The green set under is purely an index of each possible world, for example $N = \{ 1,2,3,4 \}$
+ \item The green set underneath are just \textbf{indexes} to each possible world, for example $ \mathbb{N} = \{ 1,2,3,4 \}$
 }
 \cc{	\item 每个蓝色的「冰条」代表一个 可能世界。 它们构成一个 纤维结构 (fibration) 或 层。
 }{
-\item Each blue "ice bar" represents a possible world. They form a fibrous structure (fibration) or layer.
+\item Each red ``\textbf{stalk}'' represents a possible world.  They form a \textbf{fibration} over the base.
 }
 \cc{	\item 红色横线 表示 每个逻辑命题 在不同的可能世界内的取值情况
 }{
-\item The red horizontal line represents the value of each logical proposition in different possible worlds
+\item The yellow horizontal bars show the state of truth of each logic \textbf{proposition} for each possible world.
 }
 \cc{	\item Modality = 可能世界 的同义词，在 John L Bell 的书里用这术语
 }{
-\item Modality = synonym for possible world, as used in John L Bell's book
+\item \textbf{Modality} = synonym for possible world, a terminology used in John L Bell's book
 }
 \end{itemize}
 
 \cc{但我觉得最精简的论述是这篇 2008 的论文： Topology and Modality: The Topological Interpretation of First-Order Modal Logic by Awodey \& Kishida.  本文主要是基于这篇。
 }{
-But I think the most concise discussion is this 2008 paper: Topology and Modality: The Topological Interpretation of First-Order Modal Logic by Awodey \& Kishida. This article is mainly based on this paper.
+This basic structure is laid out in the paper: \textit{Topology and Modality: The Topological Interpretation of First-Order Modal Logic} by [Awodey \& Kishida 2008].
 }
 
 \cc{那篇论文的重点是： modal propositional logic 有某种简单的 拓扑语义，而 first-order predicate logic 有另一种 denotational 语义，将两者「乘积」起来，构成 first-order modal logic 的 sheaf 语义。（学过 编程语言语义学 的人可能已听过 denotational semantics.） 我们先分别介绍这两种语义：
