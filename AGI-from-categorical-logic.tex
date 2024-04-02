@@ -328,7 +328,7 @@ The basic picture is this:
 }
 \cc{	\item Modality = 可能世界 的同义词，在 John L Bell 的书里用这术语
 }{
-\item \textbf{Modality} = synonym for possible world, a terminology used in John L Bell's book\footnote{Toposes and Local Set Theories [J L Bell 1996]}
+\item \textbf{Modality} = synonym for possible world, a terminology used in John L Bell's book\footnote{\textit{Toposes and Local Set Theories -- An Introduction} [J L Bell 1988]}
 }
 \end{itemize}
 
@@ -357,7 +357,7 @@ This was first proposed by Tarski-McKinsey in 1944.
 \cc{	\item 一个 命题 等同于 其所在为真的可能世界的 集合 (= set of open sets) \\
 		这种命题称为「UCLA 命题」，由加州大学的研究者们提出
 }{
-\item A proposition is equivalent to the set of possible worlds in which it is true (= set of open sets).  These are known as ``UCLA propositions'' after researchers at the University of California
+\item A proposition is equivalent to the \textbf{set} of possible worlds in which it is true (= set of open sets).  These are known as ``\textbf{UCLA propositions}'' after researchers at the University of California
 }
 \cc{	\item 模态算符 $\square$ 和 $\diamond$ 分别对应于拓扑上的 closure 和 interior operation
 }{
@@ -446,6 +446,14 @@ These are quite intuitive. I will look at them in detail when I have time, but n
 }
 
 \subsection{Some technical details on sheaves}
+
+\begin{equation}
+\begin{tikzcd}
+B \arrow[ddr,bend right,"\mathrm{Id}"'] \arrow[drr,bend left,"h"] \arrow[dr,dashed,"\beta"] \\
+& \smash[b]{Q} \arrow[r,"q"] \arrow[d,"g^*"] & A \arrow[d,"f"] \\
+& B \arrow[r,"g"] & C
+\end{tikzcd}
+\end{equation}
 
 \end{minipage}
 \end{preview}
