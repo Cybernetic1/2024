@@ -381,7 +381,7 @@ For example, if we only consider the following 4 possible worlds, then ``I limp'
 This part is the more classic model theory. I don’t want to spend too much time explaining it. Basically, it uses a structure to interpret logical propositions. $D$ is the domain of a logical object, such as \{ apple, banana, orange, John, Mary \}, etc.  $R$ is some relations or predicates, such as "$x$ is a person", "$x$ likes to eat $y$", etc.  $f$ is some functions, such as "$x$'s mother", "$x$'s favorite fruit", etc. $c$ are constants, such as "$c_1$ = John" etc.  A structure $M$ contains enough information to interpret the truth or falsity of any proposition. $M$ can also be regarded as the data of a possible world, where there is only one world.
 }
 \begin{gather}
-\vcenter{\hbox{\includegraphics[scale=0.7]{possible-world-single-example.png}}} \nonumber \\
+\vcenter{\hbox{\includegraphics[scale=0.7]{possible-world-single-example.png}}} \\
 \mbox{\small (For simplicity, I mixed both unary and binary predicates in the same yellow space)} \nonumber
 \end{gather}
 
@@ -447,13 +447,20 @@ These are quite intuitive. I will look at them in detail when I have time, but n
 
 \subsection{Some technical details on sheaves}
 
+Note that the categorical product (left) is defined differently from the fiber product (right):
 \begin{equation}
 \begin{tikzcd}
-B \arrow[ddr,bend right,"\mathrm{Id}"'] \arrow[drr,bend left,"h"] \arrow[dr,dashed,"\beta"] \\
-& \smash[b]{Q} \arrow[r,"q"] \arrow[d,"g^*"] & A \arrow[d,"f"] \\
-& B \arrow[r,"g"] & C
+C \arrow[ddr,bend right,"\pi'_A"'] \arrow[drr,bend left,"\pi'_B"] \arrow[dr,dashed,"!"] \\
+& \smash[b]{A \times B} \arrow[r,"\pi_B"] \arrow[d,"\pi_A"] & B \\
+& A & {}
+\end{tikzcd}
+\qquad \qquad
+\begin{tikzcd}[]
+A \times_I B \arrow[r,"\pi_B"] \arrow[dr,dashed,"!"] \arrow[d,"\pi_A"] & B \arrow[d,"g"] \\
+A \arrow[r,"f"] & I
 \end{tikzcd}
 \end{equation}
+Especially note that in the fiber product, $ \pi_A \circ f = \; ! = \pi_B \circ g $ as the diagram commutes.  
 
 \end{minipage}
 \end{preview}
