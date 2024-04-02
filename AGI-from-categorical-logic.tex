@@ -297,12 +297,12 @@ In fact, the \textbf{Transformer} has the ability to learn very complex syntacti
 
 \cc{模态逻辑 (modal logic) 与 可能世界语义 (possible world semantics) 是一种很 powerful 的逻辑形式，它可以处理很多哲学逻辑上的课题。 以前我学习符号逻辑 AI 时，比较忽略它，因为要在 计算机上实现 模态逻辑引擎 比较麻烦。  随着 AGI 越来越接近，我觉得有必要更仔细研究一下。
 }{
-Modal logic and possible world semantics are very powerful forms of logic that can handle many problems in philosophical logic.  When I studied symbolic logic AI in the past, I mostly ignored it because it was troublesome to implement a modal logic engine on a computer.  As AGI gets closer to reality, I feel the need to take a closer look to modal logics.
+Modal logic and possible world semantics are very powerful forms of logic that can handle many problems in philosophical logic.  When I studied symbolic logic AI in the past, I mostly ignored it because it was troublesome to implement a modal logic engine on a computer.  As AGI gets closer to reality, I feel the need to take a closer look at modal logics.
 }
 
 \cc{这篇文章的重点是：模态逻辑 具有 层 (sheaf) 和 topos 的结构。 事实上，topos semantics 是逻辑语义学的 「最新」 发展 （其实也很旧了 哈），有说 topos 语义能处理几乎所有我们知道的逻辑语义（究竟有什么例外我也不知）。
 }{
-The main point of this section is: modal logic has a structure of sheaves and toposes.  Topos semantics is the ``latest'' development of logical semantics (it's actually quite old, haha). It is said that topos semantics can handle almost all the logical semantics we know (though I don't even know what are the exceptions).
+The main point of this section is that modal logic has a structure of sheaves and toposes.  Topos semantics is the ``latest'' development in logical semantics (though it's actually quite old, haha).  It is said that topos semantics can handle almost all the logical semantics we know of (though I don't even know what are the exceptions).
 }
 
 \cc{以下这个图就是精要： 
@@ -316,7 +316,7 @@ The basic picture is this:
 \begin{itemize}
 \cc{	\item 底下的绿色集合 纯粹是 每个可能世界的指标 (index), 例如 $ \mathbb{N} = \{ 1,2,3,4 \} $
 }{
- \item The green set underneath are just \textbf{indexes} to each possible world, for example $ \mathbb{N} = \{ 1,2,3,4 \}$
+ \item The green set underneath are just \textbf{indexes} to each possible world, for example $ \mathbb{N} = \{ 1,2,3,4, .... \}$
 }
 \cc{	\item 每个蓝色的「冰条」代表一个 可能世界。 它们构成一个 纤维结构 (fibration) 或 层。
 }{
@@ -328,64 +328,62 @@ The basic picture is this:
 }
 \cc{	\item Modality = 可能世界 的同义词，在 John L Bell 的书里用这术语
 }{
-\item \textbf{Modality} = synonym for possible world, a terminology used in John L Bell's book
+\item \textbf{Modality} = synonym for possible world, a terminology used in John L Bell's book\footnote{Toposes and Local Set Theories [J L Bell 1996]}
 }
 \end{itemize}
 
 \cc{但我觉得最精简的论述是这篇 2008 的论文： Topology and Modality: The Topological Interpretation of First-Order Modal Logic by Awodey \& Kishida.  本文主要是基于这篇。
 }{
-This basic structure is laid out in the paper: \textit{Topology and Modality: The Topological Interpretation of First-Order Modal Logic} by [Awodey \& Kishida 2008].
+This basic structure is laid out in the paper: \textit{Topology and Modality: The Topological Interpretation of First-Order Modal Logic} [Awodey \& Kishida 2008].
 }
 
 \cc{那篇论文的重点是： modal propositional logic 有某种简单的 拓扑语义，而 first-order predicate logic 有另一种 denotational 语义，将两者「乘积」起来，构成 first-order modal logic 的 sheaf 语义。（学过 编程语言语义学 的人可能已听过 denotational semantics.） 我们先分别介绍这两种语义：
 }{
-The key point of that paper is: modal propositional logic has some simple topological semantics, and first-order predicate logic has another kind of denotational semantics. The "product" of the two constitutes the sheaf semantics of first-order modal logic. (Those who have studied programming language semantics may have heard of denotational semantics.) Let’s first introduce these two semantics respectively:
+Modal propositional logic can be interpreted by a simple \textbf{topological semantics}, while first-order predicate logic can be interpreted by \textbf{denotational semantics}.  The ``product'' of these two gives the \textbf{sheaf semantics} of first-order modal logic.  (Those who have studied programming-language semantics may have heard of denotational semantics.)  Let’s briefly introduce these two semantics:
 }
 
 \subsection{\cc{模态逻辑的拓扑语义}{Topological semantics of modal logic}}
 
 \cc{这是 Tarski-McKinsey 1944年 最先提出的。 想法就是：
 }{
-This was first proposed by Tarski-McKinsey in 1944. The idea is:
+This was first proposed by Tarski-McKinsey in 1944.
 }
 
 \begin{itemize}
 \cc{	\item 一个 可能世界 对应于 拓扑空间的一个 开集 (open set)
 }{
-\item A possible world corresponds to an open set of topological space (open set)
+\item A possible world corresponds to an \textbf{open set} in a topological space
 }
 \cc{	\item 一个 命题 等同于 其所在为真的可能世界的 集合 (= set of open sets) \\
+		这种命题称为「UCLA 命题」，由加州大学的研究者们提出
 }{
-\item A proposition is equivalent to the set of possible worlds in which it is true (= set of open sets) \\
-}
-\cc{		这种命题称为「UCLA 命题」，由加州大学的研究者们提出
-}{
-This proposition is called the "UCLA proposition" and was proposed by researchers at the University of California
+\item A proposition is equivalent to the set of possible worlds in which it is true (= set of open sets).  These are known as ``UCLA propositions'' after researchers at the University of California
 }
 \cc{	\item 模态算符 $\square$ 和 $\diamond$ 分别对应于拓扑上的 closure 和 interior operation
 }{
-\item Modal operators $\square$ and $\diamond$ correspond to topological closure and interior operations respectively.
+\item The modal operators $\square$ and $\diamond$ correspond to the topological operations of \textbf{closure} and \textbf{interior} respectively.
 }
 \end{itemize}
 
 \cc{举例来说，只考虑下面 4个可能世界，那么「我破脚」并不是必然的，但「我单身」是必然的。「◻ 我单身」这命题的 interior = 全域，所以命题为 真。
 }{
-For example, if we only consider the following four possible worlds, then "I have a broken foot" is not inevitable, but "I am single" is inevitable. The proposition "◻ I am single" has interior = the whole domain, so the proposition is true.
+For example, if we only consider the following 4 possible worlds, then ``I limp'' is not necessarily true, but ``I am single'' is.  The proposition ``$\square$ I am single'' has interior = the entire domain, thus the proposition is true.
 }
 
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.7]{possible-worlds-example.png}}}
 \end{equation}
 
-\subsection{\cc{谓词逻辑的 denotational 语义}{Denotational semantics of predicate logic}}
+\subsection{\cc{谓词逻辑的 denotational 语义}{Denotational semantics of first-order logic}}
 
 \cc{这部分是比较经典的 模型论 (model theory)，我不想花太多时间解释，基本上它用一个 结构  来 诠释 (interpret) 逻辑命题。D 是一个逻辑物体的 论域 (domain)，例如 { 苹果，香蕉，橙，John，Mary } 等。 R 是一些 关系 (relations) 或 谓词 (predicates)，例如「x 是男人」、「x 喜欢吃 y」等。 f 是一些 函数 (functions)，例如「x 的妈妈」、「x 最喜欢的水果 」、等。 c 是一些 常数，例如「c1 = John」等。 一个结构 M 包含足够的资料去 赋值 (interpret) 任何命题的真假。 也可以把 M 看成一个 可能世界 的资料，只是它是唯一的世界而已。
 }{
-This part is the more classic model theory. I don’t want to spend too much time explaining it. Basically, it uses a structure to interpret logical propositions. D is the domain of a logical object, such as {apple, banana, orange, John, Mary}, etc. R is some relations or predicates, such as "x is a man", "x likes to eat y", etc. f is some functions, such as "x's mother", "x's favorite fruit", etc. c is some constant, such as "c1 = John" etc. A structure M contains enough information to interpret the truth or falsity of any proposition. M can also be regarded as the data of a possible world, but it is the only world.
+This part is the more classic model theory. I don’t want to spend too much time explaining it. Basically, it uses a structure to interpret logical propositions. $D$ is the domain of a logical object, such as \{ apple, banana, orange, John, Mary \}, etc.  $R$ is some relations or predicates, such as "$x$ is a person", "$x$ likes to eat $y$", etc.  $f$ is some functions, such as "$x$'s mother", "$x$'s favorite fruit", etc. $c$ are constants, such as "$c_1$ = John" etc.  A structure $M$ contains enough information to interpret the truth or falsity of any proposition. $M$ can also be regarded as the data of a possible world, where there is only one world.
 }
-\begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.7]{possible-world-single-example.png}}}
-\end{equation}
+\begin{gather}
+\vcenter{\hbox{\includegraphics[scale=0.7]{possible-world-single-example.png}}} \nonumber \\
+\mbox{\small (For simplicity, I mixed both unary and binary predicates in the same yellow space)} \nonumber
+\end{gather}
 
 \end{minipage}
 \end{preview}
