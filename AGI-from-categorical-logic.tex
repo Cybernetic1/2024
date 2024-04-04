@@ -378,7 +378,7 @@ For example, if we only consider the following 4 possible worlds, then ``I limp'
 
 \cc{这部分是比较经典的 模型论 (model theory)，我不想花太多时间解释，基本上它用一个 结构  来 诠释 (interpret) 逻辑命题。D 是一个逻辑物体的 论域 (domain)，例如 { 苹果，香蕉，橙，John，Mary } 等。 R 是一些 关系 (relations) 或 谓词 (predicates)，例如「x 是男人」、「x 喜欢吃 y」等。 f 是一些 函数 (functions)，例如「x 的妈妈」、「x 最喜欢的水果 」、等。 c 是一些 常数，例如「c1 = John」等。 一个结构 M 包含足够的资料去 赋值 (interpret) 任何命题的真假。 也可以把 M 看成一个 可能世界 的资料，只是它是唯一的世界而已。
 }{
-This part is the more classic model theory. I don’t want to spend too much time explaining it. Basically, it uses a structure to interpret logical propositions. $D$ is the domain of a logical object, such as \{ apple, banana, orange, John, Mary \}, etc.  $R$ is some relations or predicates, such as "$x$ is a person", "$x$ likes to eat $y$", etc.  $f$ is some functions, such as "$x$'s mother", "$x$'s favorite fruit", etc. $c$ are constants, such as "$c_1$ = John" etc.  A structure $M$ contains enough information to interpret the truth or falsity of any proposition. $M$ can also be regarded as the data of a possible world, where there is only one world.
+This part is the standard treatment of model theory of first-order logic that can be found in many textbooks, so I don’t want to spend too much time on it.  Basically, we use a \textbf{structure} $\mathcal{M} = \langle D, R_i, f_j, c_k \rangle$ to interpret logical propositions. $D$ is the \textbf{domain} of a logical object, such as \{ apple, banana, orange, John, Mary \}, etc.  $R_i$ are \textbf{relations} or predicates, such as: ``$x$ is a person'', ``$x$ likes fruit $y$'', etc.  $f_i$ are \textbf{functions} defined in the domain, such as:  ``$x$'s mother'', ``$x$'s favorite fruit'', etc.  $c_i$ are \textbf{constants}, such as ``$c_1$ = John'' etc.  The structure $\mathcal{M}$ contains all information needed to \textbf{evaluate} the truth or falsity of any proposition defined in that syntax.  $\mathcal{M}$ can be regarded as the data of a possible world, where there is only one world.
 }
 \begin{gather}
 \vcenter{\hbox{\includegraphics[scale=0.7]{possible-world-single-example.png}}} \\
@@ -445,7 +445,7 @@ Form a sheaf, and sheaf can also be regarded as topos. The overall image is roug
 These are quite intuitive. I will look at them in detail when I have time, but now I suddenly feel that this direction may not be too useful...
 }
 
-\subsection{Some technical details on sheaves}
+\subsection{Further technical details on sheaves}
 
 Note that the categorical product (left) is defined differently from the fiber product (right):
 \begin{equation}
@@ -460,7 +460,7 @@ C \arrow[ddr,bend right,"\pi'_A"'] \arrow[drr,bend left,"\pi'_B"] \arrow[dr,dash
 A \arrow[r,"f"] & I
 \end{tikzcd}
 \end{equation}
-Especially note that in the fiber product, $ \pi_A \circ f = \; ! = \pi_B \circ g $ as the diagram commutes.  
+Especially note that in the fiber product, $ \pi_A \circ f = \; ! = \pi_B \circ g $ as the diagram commutes.  The upshot is that, in the fiber product, the projection from the product along A or B to I give the same results.  For example, we can have the pair $(\mathrm{John}_1, \mathrm{Mary}_1)$ in the fiber product, meaning John from World 1 and Mary from World 1.  But we cannot have $(\mathrm{John}_3, \mathrm{Mary}_1)$ in the fiber product;  It does not make sense to consider $\mathrm{John}_3$ and $\mathrm{Mary}_1$ together who exist in \textbf{different worlds}.  Whereas in the categorical (Cartesian) product this is possible.
 
 \end{minipage}
 \end{preview}
