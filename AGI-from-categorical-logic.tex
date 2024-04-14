@@ -241,17 +241,17 @@ Knowing where GPT fits into the scheme of things, provides some clarity.  At lea
 As Curry-Howard suggest that propositions are some kind of ``spaces'', can they have topological structure?  This is the original idea of \textbf{HoTT} (homotopy type theory) proposed by Voevodsky.
 }
 \begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.4]{../2020/Voevodsky.jpg}}} \nonumber
+\vcenter{\hbox{\includegraphics[scale=0.3]{../2020/Voevodsky.jpg}}} \nonumber
 \end{equation}
 
 \cc{以我肤浅的理解，一个命题 要么有证明 或没有证明，如果有证明的话，A 证明和 B 证明 是没有分别的。 但 HoTT 提出 它们可以有区别。 在一个命题的内部空间里，path-connected 的两个点 (proofs) 被视为 identical，但这空间内可以有不是 path-connected 的空间结构，那么 两个 proofs 就可以视为 不相同。
 }{
-From my limited understanding, a proposition either has a proof or not have a proof. If there is a proof, there is no difference between one proof or another.  But HoTT posits that they can differ. In the internal space of a proposition, two \textbf{path-connected} points (proofs) are regarded as identical, but there can be regions that are not path-connected in this space, so their proofs are regarded as different.
+From my limited understanding, a proposition either has a proof or not have a proof. If there is a proof, there is no difference between one proof or another.  But HoTT posits that they can differ. In the internal space of a proposition (of identity type $a=b$), a \textbf{path} is a proof that $a$ and $b$ are regarded as equal.
 }
 
 \cc{一个例子是： 西方古代将 金星 视为 morning star 和 evening star，而不知道它们其实是同一颗星。 这就是 intension 和 extension 的不同（意指和实际的外延不同），涉及 内涵逻辑 (intensional logic) 的问题，它的 语义可以用 模态逻辑 (modal logic) 和 Montague semantics 处理，详细可参看这篇文章： https://plato.stanford.edu/entries/logic-intensional/ 
 }{
-An example:  The ancients regarded Venus as the Morning Star and Evening Star, without knowing that they were actually the same star. This is the difference between intension and extension, which can be handled by \textbf{intensional logic}, and can be formulated using \textbf{modal logic} and Montague semantics. For details, see this article: \href{https://plato.stanford.edu/entries/logic-intensional/}{https://plato.stanford.edu/entries/logic-intensional/}
+An example:  The ancients regarded Venus as the Morning Star and Evening Star, without knowing that they were actually the same star.  This is an example of the difference between intension and extension, which can be handled by \textbf{intensional logic}, and can be implemented with \textbf{modal logic} and Montague semantics.  For details, see this article: \href{https://plato.stanford.edu/entries/logic-intensional/}{https://plato.stanford.edu/entries/logic-intensional/}
 }
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.75]{morning-star.png}}}
@@ -264,7 +264,7 @@ For another example, a group can have different \textbf{group presentations}, a 
 
 \cc{这些 不是 path-connected 的空间 具有 groupoid 结构，可以产生 1-groupoid，2-groupoid 等不同的层级，直至 ∞-groupoid. 这方面我暂时不太理解。
 }{
-These spaces that are not path-connected have a \textbf{groupoid} structure, with multiple levels such as 1-groupoid, 2-groupoid, ... up to $\infty$-groupoid.  I am not familiar with these aspects.
+These spaces that are not path-connected have a \textbf{groupoid} structure, with multiple levels such as 1-groupoid, 2-groupoid, ... up to $\infty$-groupoid.  I am still learning about these aspects.
 }
 
 \cc{大家可以看到，HoTT 涉及的是「真」的 内部（即黄色方格），但 AGI 主要涉及的是 逻辑的应用，是在 命题空间的 外部（即整个黄色香蕉那空间、其子集空间 之间的映射）。
@@ -298,12 +298,12 @@ In fact, the \textbf{Transformer} has the ability to learn very complex syntacti
 
 \cc{模态逻辑 (modal logic) 与 可能世界语义 (possible world semantics) 是一种很 powerful 的逻辑形式，它可以处理很多哲学逻辑上的课题。 以前我学习符号逻辑 AI 时，比较忽略它，因为要在 计算机上实现 模态逻辑引擎 比较麻烦。  随着 AGI 越来越接近，我觉得有必要更仔细研究一下。
 }{
-Modal logic and possible world semantics are very powerful forms of logic that can handle many problems in philosophical logic.  When I studied symbolic logic AI in the past, I mostly ignored it because it was troublesome to implement a modal logic engine on a computer.  As AGI gets closer to reality, I feel the need to take a closer look at modal logics.
+Modal logic and possible world semantics are very powerful forms of logic that can resolve many problems in philosophical logic.  When I studied symbolic logic AI in the past, I mostly ignored it because it was troublesome to implement a modal logic engine on a computer.  As AGI gets closer to reality, I feel the need to take a closer look at modal logics.
 }
 
 \cc{这篇文章的重点是：模态逻辑 具有 层 (sheaf) 和 topos 的结构。 事实上，topos semantics 是逻辑语义学的 「最新」 发展 （其实也很旧了 哈），有说 topos 语义能处理几乎所有我们知道的逻辑语义（究竟有什么例外我也不知）。
 }{
-The main point of this section is that modal logic has a structure of sheaves and toposes.  Topos semantics is the ``latest'' development in logical semantics (though it's actually quite old, haha).  It is said that topos semantics can handle almost all the logical semantics we know of (though I don't even know what are the exceptions).
+The main point of this section is that modal logic can be interpreted by sheaves and toposes.  Topos semantics is the ``latest'' development in logical semantics (though it's actually quite old, haha).  It is said that topos semantics can handle almost all the logical semantics we know of (though I don't even know what are the exceptions).
 }
 
 \cc{以下这个图就是精要： 
@@ -477,7 +477,25 @@ Especially note that in the fiber product, $ \pi_A \circ f = \; ! = \pi_B \circ 
 		
 \section{Algebraic geometry}
 
-	
+The fundamental duality in algebraic geometry is:
+\begin{equation}
+\left\{ \begin{tabular}{cc} spaces, or \\ varieties \end{tabular} \right\} \longleftrightarrow \left\{ \begin{tabular}{cc} commutative \\ $\mathbf{k}$-algebras \end{tabular} \right\}
+\end{equation}
+
+In the Grothendieck-algebraic approach, logic formulas correspond to (ideals in) commutative algebras. Crucially, such an algebra allows to define \textbf{algebraic equations} whose \textbf{zero-sets} define geometric \textbf{spaces}.  In contrast, in the Curry-Howard-categorical approach, logic formulas correspond to functional mappings or morphisms, one can form limits via categorical means (for example, the unification algorithm in logic can be implemented as \textbf{equalizers} categorically), but there is no corresponding notion of algebraic equations as far as I can see.  For example, a logic formula such as:
+\begin{equation}
+ \text{father}(X,Y) \wedge \text{father}(Y,Z) \rightarrow \text{grand-father}(X,Z)
+\end{equation}
+creates a new proposition (its conclusion), which is a type-theoretic space.  As we have more and more logic rules, we build up more and more of such types (spaces).  In contrast, in the Grothendieck picture, one starts with the entire affine space $\mathbb{A}^n$ or projective space $\mathbb{P}^n$, while each introduction of a logic rule cuts the space smaller (by intersection).
+
+Problem 1:  We don't know how to ``lift'' Boolean algebra to predicate logic to complete the Grothendieck picture.
+
+Problem 2: The time dimension $t$ is part of the geometric space.
+
+It is fascinating to compare the Grothendieck approach to algebraic logic vs the Curry-Howard tradition, and Einstein's general relativity vs quantum mechanics.  In both cases, one side is developed by a Jew with relatively few collaborators, and the other side is developed by collaborations of mostly white men.
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.8]{Grothendieck.jpg}}} \nonumber
+\end{equation}
 		
 \end{minipage}
 \end{preview}
@@ -492,6 +510,10 @@ Especially note that in the fiber product, $ \pi_A \circ f = \; ! = \pi_B \circ 
 	\setlength{\parskip}{0.4\baselineskip}
 		
 \section{What's the use of all these to AGI?}
+
+We want to \textbf{accelerate} AGI algorithms, which can be basically divided into \textbf{inference} and \textbf{learning}, of which learning is the computationally higher-complexity part, in other words the \textbf{bottleneck}.
+
+In order to accelerate, there is basically only one principled approach:  namely via \textbf{inductive bias}, based on the ``No Free Lunch'' theorem.  
 
 		
 \end{minipage}
