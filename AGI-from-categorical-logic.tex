@@ -446,7 +446,7 @@ Form a sheaf, and sheaf can also be regarded as topos. The overall image is roug
 These are quite intuitive. I will look at them in detail when I have time, but now I suddenly feel that this direction may not be too useful...
 }
 
-\subsection{Further technical details on sheaves}
+\subsection{Fiber products}
 
 Note that the categorical product (left) is defined differently from the fiber product (right):
 \begin{equation}
@@ -461,7 +461,19 @@ C \arrow[ddr,bend right,"\pi'_A"'] \arrow[drr,bend left,"\pi'_B"] \arrow[dr,dash
 A \arrow[r,"f"] & I
 \end{tikzcd}
 \end{equation}
-Especially note that in the fiber product, $ \pi_A \circ f = \; ! = \pi_B \circ g $ as the diagram commutes.  The upshot is that, in the fiber product, the projection from the product along A or B to I give the same results.  For example, we can have the pair $(\mathrm{John}_1, \mathrm{Mary}_1)$ in the fiber product, meaning John from World 1 and Mary from World 1.  But we cannot have $(\mathrm{John}_3, \mathrm{Mary}_1)$ in the fiber product;  It does not make sense to consider $\mathrm{John}_3$ and $\mathrm{Mary}_1$ together who exist in \textbf{different worlds}.  Whereas in the categorical (Cartesian) product this is possible.
+Especially note that in the fiber product, $ \pi_A \circ f = \; ! = \pi_B \circ g $ as the diagram commutes.  The upshot is that, in the fiber product, the projection from the product along $A$ or $B$ to $I$ gives the same results.  For example, we can have the pair $(\mathrm{John}_1, \mathrm{Mary}_1)$ in the fiber product, meaning John from World 1 and Mary from World 1.  But we cannot have $(\mathrm{John}_3, \mathrm{Mary}_1)$ in the fiber product;  because they exist in \textbf{different worlds}.  Whereas in the categorical (Cartesian) product this is possible.
+
+\subsection{Sheaf semantics}
+
+\begin{itemize}
+	\item In the topological interpretation, the pre-order structure of $\mathbf{K}$ is forgotten, and $\square$ is interpreted as the \textbf{interior} operation.  I'm not sure if the two interpretations coincide.  But the interior interpretation works because it satisfies \textbf{syntactic} axioms of $\square$.
+
+	\item In frame-valued logic, the truth value of a proposition is an element of a \textbf{Heyting algebra} representing possible worlds, instead of the classical $\{ \top, \bot \}$.
+	
+	\item By the construct of UCLA propositions, Kripke interpretations and frame-valued interpretations can be made to coincide, except that in the Kripke interpretation we have the extra information that each frame element belongs to a world $k$.
+	
+	\item 
+\end{itemize}
 
 \end{minipage}
 \end{preview}
