@@ -12,7 +12,7 @@
 \usepackage[absolute,overlay]{textpos}		% for page number on upper left corner
 
 \usepackage{color}
-% \usepackage{mathtools}
+\usepackage{mathtools}		% to extend length of double harpoon arrows
 \usepackage[hyperfootnotes=false]{hyperref}
 
 % \usepackage[backend=biber,style=numeric]{biblatex}
@@ -254,7 +254,7 @@ From my limited understanding, a proposition either has a proof or not have a pr
 An example:  The ancients regarded Venus as the Morning Star and Evening Star, without knowing that they were actually the same star.  This is an example of the difference between intension and extension, which can be handled by \textbf{intensional logic}, and can be implemented with \textbf{modal logic} and Montague semantics.  For details, see this article: \href{https://plato.stanford.edu/entries/logic-intensional/}{https://plato.stanford.edu/entries/logic-intensional/}
 }
 \begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.75]{morning-star.png}}}
+\vcenter{\hbox{\includegraphics[scale=0.7]{morning-star.png}}}
 \end{equation}
 
 \cc{又例如 同一个群 可以有不同的 群展示 (group presentations)，似乎也可以用 HoTT 处理。
@@ -461,7 +461,7 @@ C \arrow[ddr,bend right,"\pi'_A"'] \arrow[drr,bend left,"\pi'_B"] \arrow[dr,dash
 A \arrow[r,"f"] & I
 \end{tikzcd}
 \end{equation}
-Especially note that in the fiber product, $ \pi_A \circ f = \; ! = \pi_B \circ g $ as the diagram commutes.  The upshot is that, in the fiber product, the projection from the product along $A$ or $B$ to $I$ gives the same results.  For example, we can have the pair $(\mathrm{John}_1, \mathrm{Mary}_1)$ in the fiber product, meaning John from World 1 and Mary from World 1.  But we cannot have $(\mathrm{John}_3, \mathrm{Mary}_1)$ in the fiber product;  because they exist in \textbf{different worlds}.  Whereas in the categorical (Cartesian) product this is possible.
+Especially note that in the fiber product, $ \pi_A \circ f = \; ! = \pi_B \circ g $ as the diagram commutes.  The upshot is that, in the fiber product, the projection from the product along $A$ or $B$ to $I$ gives the same results.  For example, we can have the pair $(\mathrm{John}_1, \mathrm{Mary}_1)$ in the fiber product, meaning John from World 1 and Mary from World 1.  But we cannot have $(\mathrm{John}_3, \mathrm{Mary}_1)$ in the fiber product  because they exist in \textbf{different worlds}.  Whereas in the categorical (Cartesian) product this is possible.
 
 \subsection{Sheaf semantics}
 
@@ -470,7 +470,7 @@ Especially note that in the fiber product, $ \pi_A \circ f = \; ! = \pi_B \circ 
 
 	\item In frame-valued logic, the truth value of a proposition is an element of a \textbf{Heyting algebra} representing possible worlds, instead of the classical $\{ \top, \bot \}$.
 	
-	\item By the construct of UCLA propositions, Kripke interpretations and frame-valued interpretations can be made to coincide, except that in the Kripke interpretation we have the extra information that each frame element belongs to a world $k$.
+	\item By the method of \textbf{UCLA propositions}, Kripke interpretations and frame-valued interpretations can be made to coincide, except that in the Kripke interpretation we have the extra information that each frame element belongs to a world $k$.
 	
 	\item 
 \end{itemize}
@@ -501,6 +501,14 @@ within this correspondence, we have:
 My visualization of the ``Grothendieck picture'' of AGI is like this:
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.7]{Grothendieck-picture.png}}}
+\end{equation}
+
+\begin{equation}
+\underset{\footnotesize\color{red}\text{classifying topos}}{\mathcal{E}_\mathbb{T}} \xrightleftharpoons[]{\; \text{ internal language } \;} \underset{\footnotesize\color{red}\text{theory}}{\mathbb{T}}
+\end{equation}
+
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.8]{geometric-topos.png}}}
 \end{equation}
 
 In the Grothendieck-algebraic approach, logic formulas correspond to (ideals in) commutative algebras. Crucially, such an algebra allows to define \textbf{algebraic equations} whose \textbf{zero-sets} define geometric \textbf{spaces}.  In contrast, in the Curry-Howard-categorical approach, logic formulas correspond to functional mappings or morphisms, one can form limits via categorical means (for example, the unification algorithm in logic can be implemented as \textbf{equalizers} categorically), but there is no corresponding notion of algebraic equations as far as I can see.  For example, a logic formula such as:
