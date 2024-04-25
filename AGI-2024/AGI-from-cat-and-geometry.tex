@@ -1,7 +1,3 @@
-% This is samplepaper.tex, a sample chapter demonstrating the
-% LLNCS macro package for Springer Computer Science proceedings;
-% Version 2.21 of 2022/01/12
-%
 \documentclass[runningheads]{llncs}
 %
 \usepackage[T1]{fontenc}
@@ -17,7 +13,14 @@
 % to display URLs in blue roman font according to Springer's eBook style:
 %\usepackage{color}
 %\renewcommand\UrlFont{\color{blue}\rmfamily}
-%
+
+\usepackage{amsmath}
+\usepackage{amssymb}    % for \rightsquigarrow
+\usepackage{wasysym}	% for frown face
+\usepackage{mathrsfs} 	% for \mathscr
+\usepackage{stmaryrd}
+\usepackage{mathtools}		% to extend length of double harpoon arrows
+
 \begin{document}
 %
 \title{AGI from the perspectives of Categorical Logic and Algebraic Geometry}
@@ -52,6 +55,8 @@ Traditionally this line of research is called algebraic logic, starting from Lei
 
 \section{Our conclusions so far}
 
+The conclusions of this paper are mostly negative.  That is, the mathematical structures described here seem unable to offer practical ways to accelerate AGI, unless the reader can discover more ingenious ideas.  Nevertheless we hope the presentation of the ideas thus far can help the readers on their way.
+
 \subsection{Basic categorical logic}
 
 \subsection{Modal logic}
@@ -60,19 +65,32 @@ Traditionally this line of research is called algebraic logic, starting from Lei
 
 \subsection{Algebraic geometry}
 
-Please note that the first paragraph of a section or subsection is
-not indented. The first paragraph that follows a table, figure,
-equation etc. does not need an indent, either.
+The fundamental duality in algebraic geometry is:
+\begin{equation}
+\left\{ \begin{tabular}{cc} spaces, or \\ varieties \end{tabular} \right\} \longleftrightarrow \left\{ \begin{tabular}{cc} commutative \\ $\mathbf{k}$-algebras \end{tabular} \right\}
+\end{equation}
+within this correspondence, we have:
+\begin{equation}
+\left\{ \begin{tabular}{cc} points in \\ geometry \end{tabular} \right\} \longleftrightarrow \left\{ \begin{tabular}{cc} prime ideals \end{tabular} \right\}
+\end{equation}
 
-Subsequent paragraphs, however, are indented.
+An approach suggested by Yuri Manin is to turn logic into an algebra, such as the Boolean ring (but this can only handle propositional logic).  Varieties defined by such Boolean polynomials \cite{ref_article1} live in the space $\mathbb{Z}_2^n$, the discrete hypercube.  
 
-\subsubsection{Sample Heading (Third Level)} Only two levels of
-headings should be numbered. Lower level headings remain unnumbered;
-they are formatted as run-in headings.
+My visualization of the ``Grothendieck picture'' of AGI is like this:
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.7]{Grothendieck-picture.png}}} \nonumber
+\end{equation}
 
-\paragraph{Sample Heading (Fourth Level)}
-The contribution should contain no more than four levels of
-headings. Table~\ref{tab1} gives a summary of all heading levels.
+One of the interesting discoveries in categorical logic is that every topos admits an \textbf{internal language}.  This is a simple consequence of Curry-Howard: since a type-space corresponds to a logic proposition, and categorical logic interprets a type-space as an object in the category, thus every category (satisfying extra conditions) can be interpreted as having an ``internal'' logic.  The converse of this correspondence is the \textbf{classifying topos} of a logic theory:
+\begin{equation}
+\underset{\footnotesize\text{classifying topos}}{\mathcal{E}_\mathbb{T}} \xrightleftharpoons[]{\; \text{ internal language } \;} \underset{\footnotesize\text{theory}}{\mathbb{T}}
+\end{equation}
+
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.8]{geometric-topos.png}}}
+\end{equation}
+
+% 代数几何中最特别的地方是出现了 由代数方程 =0 定义的代数簇，这个带结构的空间 与抽象的 scheme 对应，scheme 是研究代数簇的更抽象而合理的对象。 范畴逻辑来自 Curry-Howard 的传统，我研究的目的是寻找 逻辑在数学中的适当位置，但也寻找逻辑的更 general 形式。 逻辑加入了「数量」运算之后，可以处理「方程」的问题，而在另一方向发展，它处理自然语言的问题。
 
 \begin{table}
 \caption{Table captions should be placed above the
@@ -90,16 +108,6 @@ Title (centered) &  {\Large\bfseries Lecture Notes} & 14 point, bold\\
 \end{tabular}
 \end{table}
 
-
-\noindent Displayed equations are centered and set on a separate
-line.
-\begin{equation}
-x + y = z
-\end{equation}
-Please try to avoid rasterized images for line-art diagrams and
-schemas. Whenever possible, use vector graphics instead (see
-Fig.~\ref{fig1}).
-
 \begin{figure}
 \includegraphics[width=\textwidth]{fig1.eps}
 \caption{A figure caption is always placed below the illustration.
@@ -116,19 +124,6 @@ propositions, and corollaries are styled the same way.
 % the environments 'definition', 'lemma', 'proposition', 'corollary',
 % 'remark', and 'example' are defined in the LLNCS documentclass as well.
 %
-\begin{proof}
-Proofs, examples, and remarks have the initial word in italics,
-while the following text appears in normal font.
-\end{proof}
-For citations of references, we prefer the use of square brackets
-and consecutive numbers. Citations using labels or the author/year
-convention are also acceptable. The following bibliography provides
-a sample reference list with entries for journal
-articles~\cite{ref_article1}, an LNCS chapter~\cite{ref_lncs1}, a
-book~\cite{ref_book1}, proceedings without editors~\cite{ref_proc1},
-and a homepage~\cite{ref_url1}. Multiple citations are grouped
-\cite{ref_article1,ref_lncs1,ref_book1},
-\cite{ref_article1,ref_book1,ref_proc1,ref_url1}.
 
 \subsubsection{Acknowledgements} Please place your acknowledgments at
 the end of the paper, preceded by an unnumbered run-in heading (i.e.
