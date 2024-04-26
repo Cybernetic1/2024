@@ -50,9 +50,9 @@ To ``situate'' AGI in the context of some current mathematics, so that readers c
 %
 %
 %
-\section{Goal of this research}
+\section{Goal of this paper}
 
-The bottleneck of AGI development is the speed of learning algorithms.  The daily cost of training GPT-4 was rumored to be \$100M by Sam Altman.  To speed up learning, one needs \textbf{inductive biases}, according to the \textbf{No Free Lunch theorem}.  One principled way to introduce inductive bias is by the structure of logic.  The reason being that, if humans have discovered the structure of logic in this world, an intelligent program may re-discover the same structure.  So our question is:  what is the mathematical structure of logic?
+The bottleneck of AGI development is the speed of learning algorithms.  The daily cost of training GPT-4 was rumored to be \$100M by Sam Altman.  To speed up learning, one needs \textbf{inductive biases}, according to the \textbf{No Free Lunch theorem} \cite{Wolpert1997} \cite{Wikipedia-no-free-lunch}.  A principled way to introduce inductive bias is by the structure of logic.  The reason being that, if humans have discovered the structure of logic in this world, an intelligent program may re-discover the same structure.  So our question is:  what is the mathematical structure of logic?
 
 % Traditionally this line of research is called algebraic logic, starting from Leibniz and Boole, up to more recent times Tarski's cylindrical algebra and Paul Halmos' work.  
 
@@ -79,7 +79,7 @@ GPT \cite{chatGPT2020} can be regarded as a \textbf{logic consequence operator} 
 
 Without loss of generality, GPT can be seen as acting on propositions, as probability distributions on tokens are equivalent to probability distributions on sentences (propositions), see Fig. \ref{fig:she-is-bitch}.
 
-To what extent can we say that GPT outputs a vector in a Curry-Howard type-theoretic space?  The answer is: only in an abstract sense, but not literally.  A neural network (eg. GPT) always maps an input to the the same output vector, as it is a \textit{deterministic} map. Thus it seems meaningless to ask what is the meaning of the \textit{neighborhood} of an output vector, if the network never goes there during inference time.
+To what extent can we say that GPT outputs a vector in a Curry-Howard type-theoretic space?  A neural network (eg. GPT) always maps an input to the the same output vector, as it is a \textit{deterministic} map. Thus it seems meaningless to ask what is the meaning of the \textit{neighborhood} of an output vector, if the network never goes there during inference time.
 
 \begin{figure}
 	\includegraphics[scale=.4]{Transformer-output.png} \qquad
@@ -106,11 +106,15 @@ It seems difficult to translate this structure into a structural modification of
 
 The following two conditions concern the well-behavior of quantification, as described in \cite{Jacobs1999} and on nLab \cite{nLab-beck-chevalley} \cite{nLab-Frobenius}:
 
-\noindent The \textbf{Beck-Chevalley condition}.  
+\noindent The \textbf{Beck-Chevalley condition} says that substitution of free variables commutes with quantification.
 
 \noindent The \textbf{Frobenius condition} corresponds in logic to saying that $\exists x. (\phi \wedge \psi)$ is equivalent to $(\exists x. \phi) \wedge \psi$ if $x$ is not free in $\psi$.
 
+Both conditions are ``self-evident'' from the logic perspective, but it remains to be seen how they can be applied to neural networks.
+
 \subsection{Predicates as fibration}
+
+The relevant mental picture here is Fig.\ref{fig:GPT-is-here}(Left). 
 
 \subsection{Iteration of $\vdash$ and Looped Transformers}
 
@@ -131,28 +135,33 @@ The fundamental duality in algebraic geometry is:
 \begin{equation}
 \left\{ \begin{tabular}{cc} spaces, or \\ varieties \end{tabular} \right\} \longleftrightarrow \left\{ \begin{tabular}{cc} commutative \\ $\mathbf{k}$-algebras \end{tabular} \right\}
 \end{equation}
-within this correspondence, we have:
-\begin{equation}
-\left\{ \begin{tabular}{cc} points in \\ geometry \end{tabular} \right\} \longleftrightarrow \left\{ \begin{tabular}{cc} prime ideals \end{tabular} \right\}
-\end{equation}
+within this correspondence, ``points'' in geometry are identified with \textbf{prime ideals}.
+%\begin{equation}
+%\left\{ \begin{tabular}{cc} points in \\ geometry \end{tabular} \right\} \longleftrightarrow \left\{ \begin{tabular}{cc} prime ideals \end{tabular} \right\}
+%\end{equation}
 
-An approach suggested by Yuri Manin is to turn logic into an algebra, such as the Boolean ring (but this can only handle propositional logic).  Varieties defined by such Boolean polynomials \cite{Lundqvist2015} live in the space $\mathbb{Z}_2^n$, the discrete hypercube.  
+An approach suggested by Yuri Manin is to turn logic into an algebra, such as the Boolean ring (but this can only handle propositional logic).  Varieties defined by such Boolean polynomials \cite{Lundqvist2015} live in the space $\mathbb{Z}_2^n$, the \textbf{discrete hypercube}.  
 
 My visualization of the ``Grothendieck picture'' of AGI is like this:
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.4]{Grothendieck-picture.png}}} \nonumber
 \end{equation}
 
-One of the interesting discoveries in categorical logic is that every topos admits an \textbf{internal language}.  This is a simple consequence of Curry-Howard: since a type-space corresponds to a logic proposition, and categorical logic interprets a type-space as an object in the category, thus every category (satisfying extra conditions) can be interpreted as having an ``internal'' logic.  The converse of this correspondence is the \textbf{classifying topos} of a logic theory:
+One of the interesting discoveries in categorical logic is that every topos admits an \textbf{internal language}.  This is a simple consequence of Curry-Howard: since a type-space corresponds to a logic proposition, and categorical logic interprets type-spaces as objects in a category, thus every category (satisfying extra conditions) can be interpreted as having an ``internal'' logic.  The converse of this correspondence is the \textbf{classifying topos} of a logic theory $\mathbb{T}$:
 \begin{equation}
 \underset{\footnotesize\text{classifying topos}}{\mathcal{E}_\mathbb{T}} \xrightleftharpoons[]{\; \text{ internal language } \;} \underset{\footnotesize\text{theory}}{\mathbb{T}}
 \end{equation}
-An alternative approach by Ingo Blechschmidt \cite{Blechschmidt2017}.
 
-What is the ``internal logic'' of classical algebraic geometry?  It may allow us to reason about polynomials, but that is different from AI logic.
-\begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.5]{geometric-topos.png}}}
-\end{equation}
+Olivia Caramello \cite{Caramello2018} developed an idea where toposes play the central role of ``bridges'' that transfer information between theories (AGI can be seen as the \textbf{common-sense theory} of our physical world).  She showed that for any geometric theory $\mathbb{T}$, interpreted in the Grothendieck topos $\mathcal{E}_\mathbb{T}$, there is a \textbf{universal} model $U$ such that any model of $\mathbb{T}$ up to isomorphism is a pullback of $U$ along a geometric morphism.  This means that the \textbf{classifying topos} of $\mathbb{T}$ is the \textbf{representing object} in a \textbf{Yoneda lemma}\footnote{The Yoneda lemma can be understood as saying some object in a category is able to ``represent'' the entire category.  A archetypal example is \textbf{Cayley's theorem} in group theory, that says that every finite group is isomorphic to a subgroup of the symmetric group $\mathfrak{S}_n$. Here the symmetric group is the \textbf{representing object} capable of representing all finite groups.}.  A diagram in her book is reproduced here with simplifications in Fig.\ref{fig:Caramello-pic}(Left).
+
+\begin{figure}
+	\includegraphics[scale=.25]{Caramello-picture.png} \qquad
+	\includegraphics[scale=.5]{geometric-topos.png}
+	\caption{(Left) The universal model $U$ inside its classifying topos (darker color); (Right) The classical formulation of algebraic geometry}
+	\label{fig:Caramello-pic}
+\end{figure}
+
+In a similar vein, Ingo Blechschmidt's PhD thesis \cite{Blechschmidt2017} and his IHES presentation 9 years ago \cite{Blechschmidt-video2015} brings the categorical idea of internal language back to its classical setting in algebraic geometry.  The situation is as depicted in Fig.\ref{fig:Caramello-pic}(Right).  In this approach, the internal logic comes from the (``big'' and ``small'') \textbf{Zariski topology} of the base space, or \textbf{site}.  The basic idea is that the topology of \textbf{open sets} is a \textbf{Heyting algebra} that can be interpreted as \textbf{intuitionistic logic}\footnote{The \textbf{negation} (complement) of an open set has to be another open set, leaving the boundary out, thus $\neg \neg A = A$ is not generally valid, as opposed to classical logic.}.  The external view of ``sheaves of objects'' is simplified to ``plain objects'' in the internal view, where such objects can be rings (such as $\mathcal{O}_{\mathrm{spec} X}$), modules, etc.  The ring $\mathcal{O}_{\mathrm{spec} X}$ contains the polynomials that define the algebraic variety $X$, and the internal logic can be used to reason about such polynomials.
 
 % Grothendieck 的方法是透过抽象，将技巧转移到新的范围....  但有没有可能将几何的技巧应用在自然语言逻辑？ 
 
