@@ -56,7 +56,7 @@ The bottleneck of AGI development is the speed of learning algorithms.  The dail
 
 % Traditionally this line of research is called algebraic logic, starting from Leibniz and Boole, up to more recent times Tarski's cylindrical algebra and Paul Halmos' work.  
 
-\section{Conclusions thus far}
+\section{Results thus far}
 
 The conclusions of this paper are mostly \textit{negative}.  That is to say, the mathematical structures described here seem unable to offer practical ways to accelerate AGI, unless the reader can discover more ingenious ideas.  Nevertheless the author hopes the presentation of these ideas thus far can help the readers on their way.
 
@@ -66,11 +66,11 @@ In each section below, we look at one aspect of the categorical structure of log
 
 \begin{figure}
 	\includegraphics[scale=.5]{GPT-is-here.png}
-	\caption{(Left) A sheaf of propositions over pairs of natural numbers; (Right) The function space where GPT lives.}
+	\caption{(Left) A sheaf of propositions over pairs of natural numbers; (Right) The function space where GPT lives. $\mathbf{P} L = 2^L$ is the power set of $L$.}
 	\label{fig:GPT-is-here}
 \end{figure}
 
-GPT \cite{chatGPT2020} can be regarded as a \textbf{logic consequence operator} mapping from the space of propositions to itself (as a \textbf{set-valued map}), as shown in Fig.\ref{fig:GPT-is-here}.
+GPT \cite{chatGPT2020} can be regarded as a \textbf{logic consequence operator} mapping from the space of propositions to itself (as a \textbf{set-valued map} \cite{Aubin1990}), as shown in Fig.\ref{fig:GPT-is-here}.
 
 \begin{figure}
 	\includegraphics[scale=.4]{I-love-her-she-is-bitch.png}	% width=\textwidth
@@ -79,26 +79,26 @@ GPT \cite{chatGPT2020} can be regarded as a \textbf{logic consequence operator} 
 
 Without loss of generality, GPT can be seen as acting on propositions, as probability distributions on tokens are equivalent to probability distributions on sentences (propositions), see Fig. \ref{fig:she-is-bitch}.
 
-To what extent can we say that GPT outputs a vector in a Curry-Howard type-theoretic space?  A neural network (eg. GPT) always maps an input to the the same output vector, as it is a \textit{deterministic} map. Thus it seems meaningless to ask what is the meaning of the \textit{neighborhood} of an output vector, if the network never goes there during inference time.
+To what extent can we say that GPT output vectors live in a Curry-Howard type-theoretic space?  A neural network (eg. GPT) always maps an input to the the same output vector, as it is a \textit{deterministic} map. Thus it seems meaningless to ask what is the meaning of the \textit{neighborhood} of an output vector, if the network never goes there during inference time.
 
 \begin{figure}
-	\includegraphics[scale=.4]{Transformer-output.png} \qquad
+	\includegraphics[scale=.45]{Transformer-output.png} \quad
 	\includegraphics[scale=.35]{morning-star.png}
-	\caption{(Left) How probabilistic inference in GPT results in deterministic vector positions; (Right) In HoTT, a path is a proof object of an identity type.}
+	\caption{(Left) How probabilistic inference in GPT results in deterministic vector positions. $N$ = size of vocabulary; (Right) In HoTT, a path is a proof object of an \textbf{identity type}.}
 	\label{fig:morning-star}
 \end{figure}
 
 Fig.\ref{fig:morning-star}(Left) illustrates why even despite probabilistic sampling, the outputs of GPT seem to follow fixed trajectories (as soon as learning has finished).  Nevertheless, if we artificially ``perturb'' the input, the output probability distribution will change \textit{smoothly}, say from favoring token $A$ to favoring token $B$, as neural networks are always \textit{differentiable} functions.  One can define the \textbf{boundary} between tokens $A$ and $B$ as where their probabilities reverse in magnitude.  This forms a Voronoi-like tessellation of the output space that can be regarded as Curry-Howard type-spaces.
 
-\subsection{Homotopy type theory}
+\subsection{Homotopy type theory (HoTT)}
 
-For a neural network to process HoTT information, it needs a way to 
+HoTT is a step along the Curry-Howard tradition where propositions = types = spaces, and such spaces are given \textbf{homotopy} structure.  An example is ``morning star = evening star'', illustrated in Fig.\ref{fig:morning-star}(Right).  But the enterprise does not end here: higher homotopy types give rise to a system of $\infty$-groupoids.  From my shallow understanding of this subject, this seems to suggest that proofs have their own proofs, so that an entire \textbf{inference trace} can be recorded as homotopy paths.  Doing so may be useful from the perspective of \textbf{Truth Maintenance Systems} of classical AI.
 
-Therefore we can conclude that current neural networks are unlikely to process HoTT structures.
+From the previous section we may argue that the output vectors of a neural network can be regarded as \textbf{proof objects} in their respective type-spaces.  However we can also argue that such type-spaces as implemented by neural networks are \textit{unlikely} to have complex internal structures, because one proof object must vary \textit{smoothly} into another proof object.  To be able to process HoTT information, we may need neural networks with \textbf{fractal structure} (this can be implemented using recursion + scaling), but current neural architectures seem to lack it.
 
 \subsection{Commutativity of $\wedge$ and $\vee$}
 
-Permutation symmetry is the easiest to recognize and implement \cite{Zaheer2017} \cite{Qi2017}.  It is well-known the Transformer is \textbf{equivariant} to permutations of inputs.  This may be seen as evidence that Transformer \textbf{tokens} are proposition-like entities, with the caveat that we may be confusing the propositional level with the sub-propositional level of atomic concepts.  An easy-to-remember example is: $I \heartsuit U \neq U \heartsuit I$, but $I \heartsuit U \wedge U \heartsuit I = U \heartsuit I \wedge I \heartsuit U$.
+Permutation symmetry is the easiest to recognize and implement \cite{Zaheer2017} \cite{Qi2017}.  It is well-known the Transformer \cite{Vaswani2017} is \textbf{equivariant} to permutations of inputs.  This may be seen as evidence that Transformer \textbf{tokens} are proposition-like entities, with the caveat that we may be confusing the propositional level with the sub-propositional level of atomic concepts.  An easy-to-remember example is: $I \heartsuit U \neq U \heartsuit I$, but $I \heartsuit U \wedge U \heartsuit I = U \heartsuit I \wedge I \heartsuit U$.
 
 \subsection{$\forall$ and $\exists$ as adjunctions}
 
@@ -114,9 +114,13 @@ Both conditions are ``self-evident'' from the logic perspective, but it remains 
 
 \subsection{Predicates as fibration}
 
-The relevant mental picture here is Fig.\ref{fig:GPT-is-here}(Left). 
+The relevant mental picture here is Fig.\ref{fig:GPT-is-here}(Left). Current neural networks seem to operate in the space $L$ above the base space and are unaware of the predicate-fibration structure.  Knowledge graphs have an obvious \textbf{first-order structure} as they are made of nodes and links.  One can embed nodes into a metric space $D$ and form the Cartesian product $D \times D$, then a link $a\,R\,b$ is just a point sitting vertically above this domain, and the relation $R$ is a point-set or its \textbf{cover}.  This setup may increase efficiency if we know \textit{a priori} that the dataset is first-order.
+
+More interesting is the case of \textbf{higher-order logic} (HOL), which means we can have quantified rules \textit{over} relations, which suggests we should embed rules in the same manner as we embedded first-order objects.  This seems to require the use of \textbf{set-valued maps} \cite{Aubin1990}.
 
 \subsection{Iteration of $\vdash$ and Looped Transformers}
+
+This idea is easy to implement, and it also comes from an obvious feature of logic:  we know that inferences in logic are \textit{repeated} applications of the \textit{same} set of rules of a knowledge-base $K$, $\Gamma \vdash_K \vdash_K ... \vdash_K \Delta$.  But current Transformer architectures (which can be > 100 layers deep) do not re-use their layers at a fine scale.  Perhaps the recent research in \textbf{Looped Transformers} \cite{Yang2024} \cite{Giannou2023} can offer improvements in this direction.
 
 \subsection{Modal logic}
 
@@ -129,7 +133,7 @@ Grothendieck topology is re-captured as a modal operator.
 	\label{fig:possible-worlds-as-sheaf}
 \end{figure}
 
-\subsection{Algebraic geometry}
+\subsection{Algebraic geometry and topos theory}
 
 The fundamental duality in algebraic geometry is:
 \begin{equation}
@@ -140,12 +144,12 @@ within this correspondence, ``points'' in geometry are identified with \textbf{p
 %\left\{ \begin{tabular}{cc} points in \\ geometry \end{tabular} \right\} \longleftrightarrow \left\{ \begin{tabular}{cc} prime ideals \end{tabular} \right\}
 %\end{equation}
 
-An approach suggested by Yuri Manin is to turn logic into an algebra, such as the Boolean ring (but this can only handle propositional logic).  Varieties defined by such Boolean polynomials \cite{Lundqvist2015} live in the space $\mathbb{Z}_2^n$, the \textbf{discrete hypercube}.  
+An approach suggested by Yuri Manin is to turn logic into an \textbf{algebra}, such as the Boolean ring (but this can only handle propositional logic).  Varieties defined by such Boolean polynomials \cite{Lundqvist2015} live in the space $\mathbb{Z}_2^n$, the \textbf{discrete hypercube}.  
 
-My visualization of the ``Grothendieck picture'' of AGI is like this:
-\begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.4]{Grothendieck-picture.png}}} \nonumber
-\end{equation}
+%My visualization of the ``Grothendieck picture'' of AGI is like this:
+%\begin{equation}
+%\vcenter{\hbox{\includegraphics[scale=0.4]{Grothendieck-picture.png}}} \nonumber
+%\end{equation}
 
 One of the interesting discoveries in categorical logic is that every topos admits an \textbf{internal language}.  This is a simple consequence of Curry-Howard: since a type-space corresponds to a logic proposition, and categorical logic interprets type-spaces as objects in a category, thus every category (satisfying extra conditions) can be interpreted as having an ``internal'' logic.  The converse of this correspondence is the \textbf{classifying topos} of a logic theory $\mathbb{T}$:
 \begin{equation}
@@ -157,11 +161,13 @@ Olivia Caramello \cite{Caramello2018} developed an idea where toposes play the c
 \begin{figure}
 	\includegraphics[scale=.25]{Caramello-picture.png} \qquad
 	\includegraphics[scale=.5]{geometric-topos.png}
-	\caption{(Left) The universal model $U$ inside its classifying topos (darker color); (Right) The classical formulation of algebraic geometry}
+	\caption{(Left) The universal model $U$ sits inside its classifying topos (darker color); (Right) The classical formulation of algebraic geometry}
 	\label{fig:Caramello-pic}
 \end{figure}
 
-In a similar vein, Ingo Blechschmidt's PhD thesis \cite{Blechschmidt2017} and his IHES presentation 9 years ago \cite{Blechschmidt-video2015} brings the categorical idea of internal language back to its classical setting in algebraic geometry.  The situation is as depicted in Fig.\ref{fig:Caramello-pic}(Right).  In this approach, the internal logic comes from the (``big'' and ``small'') \textbf{Zariski topology} of the base space, or \textbf{site}.  The basic idea is that the topology of \textbf{open sets} is a \textbf{Heyting algebra} that can be interpreted as \textbf{intuitionistic logic}\footnote{The \textbf{negation} (complement) of an open set has to be another open set, leaving the boundary out, thus $\neg \neg A = A$ is not generally valid, as opposed to classical logic.}.  The external view of ``sheaves of objects'' is simplified to ``plain objects'' in the internal view, where such objects can be rings (such as $\mathcal{O}_{\mathrm{spec} X}$), modules, etc.  The ring $\mathcal{O}_{\mathrm{spec} X}$ contains the polynomials that define the algebraic variety $X$, and the internal logic can be used to reason about such polynomials.
+In a similar vein, Ingo Blechschmidt's PhD thesis \cite{Blechschmidt2017} and his IHES presentation 9 years ago \cite{Blechschmidt-video2015} brings the categorical idea of internal language back to its classical setting in algebraic geometry.  The situation is as depicted in Fig.\ref{fig:Caramello-pic}(Right).  In this setup, the internal logic comes from the (``big'' and ``small'') \textbf{Zariski topology} of the base space, or \textbf{site}.  The basic idea is that the topology of \textbf{open sets} is a \textbf{Heyting algebra} that can be interpreted as \textbf{intuitionistic logic}\footnote{The \textbf{negation} (complement) of an open set has to be another open set, leaving the boundary out, thus $\neg \neg A = A$ is not generally valid, as opposed to classical logic.}.  The external view of ``sheaves of objects'' is simplified to ``plain objects'' in the internal view, where such objects can be rings (such as $\mathcal{O}_{\mathrm{spec} X}$), modules, etc.  The ring $\mathcal{O}_{\mathrm{spec} X}$ contains the polynomials that define the algebraic variety $X$, and the internal logic can be used to reason about such polynomials.
+
+Andrei Rodin in his book \cite{Rodin2014} argues that logic is an axiomatic \textbf{abstraction} of the objective world, or as Lawvere \cite{Lawvere1997} \cite{Lawvere2003} puts it, we should ``\textit{concentrate the essence of practice to guide practice}'' (in the Foreword to \cite{Adamek2011}).  This serves as a nice closing remark.
 
 % Grothendieck 的方法是透过抽象，将技巧转移到新的范围....  但有没有可能将几何的技巧应用在自然语言逻辑？ 
 
