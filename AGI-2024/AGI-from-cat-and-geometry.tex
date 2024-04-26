@@ -1,5 +1,8 @@
 \documentclass[runningheads]{llncs}
-%
+
+\usepackage[backend=biber]{biblatex}
+\bibliography{../../AGI-book}
+
 \usepackage[T1]{fontenc}
 % T1 fonts will be used to generate the final print and online PDFs,
 % so please use T1 fonts in your manuscript whenever possible.
@@ -40,28 +43,87 @@
 \maketitle              % typeset the header of the contribution
 %
 \begin{abstract}
-To ``situate'' AGI in the context of current mathematics, so that mathematics-minded professionals can more easily see whether current mathematical ideas can be fruitfully applied to AGI.
+To ``situate'' AGI in the context of some current mathematics, so that readers can more easily see whether current mathematical ideas can be fruitfully applied to AGI.
 
-\keywords{AGI  \and categorical logic \and homotopy type theory \and Curry-Howard isomorphism \and algebraic geometry.}
+\keywords{AGI  \and categorical logic \and Curry-Howard isomorphism \and homotopy type theory  \and algebraic geometry \and topos theory.}
 \end{abstract}
 %
 %
 %
-\section{Goal of this paper}
+\section{Goal of this research}
 
-The bottleneck of AGI development is the speed of learning algorithms.  The cost of training GPT-4 was rumored to be \$100M (by Sam Altman).  To speed up learning, one needs to introduce inductive biases, according to the No Free Lunch theorem.  One principled way to introduce inductive bias is by imposing the structure of logic.  One reasons that, if humans have discovered the structure of logic in this world, an intelligent program may re-discover the same structure.  So our question is:  what is the mathematical structure of logic?
+The bottleneck of AGI development is the speed of learning algorithms.  The daily cost of training GPT-4 was rumored to be \$100M by Sam Altman.  To speed up learning, one needs \textbf{inductive biases}, according to the \textbf{No Free Lunch theorem}.  One principled way to introduce inductive bias is by the structure of logic.  The reason being that, if humans have discovered the structure of logic in this world, an intelligent program may re-discover the same structure.  So our question is:  what is the mathematical structure of logic?
 
-Traditionally this line of research is called algebraic logic, starting from Leibniz and Boole, up to more recent times Tarski's cylindrical algebra and Paul Halmos' work.  
+% Traditionally this line of research is called algebraic logic, starting from Leibniz and Boole, up to more recent times Tarski's cylindrical algebra and Paul Halmos' work.  
 
-\section{Our conclusions so far}
+\section{Conclusions thus far}
 
-The conclusions of this paper are mostly negative.  That is, the mathematical structures described here seem unable to offer practical ways to accelerate AGI, unless the reader can discover more ingenious ideas.  Nevertheless we hope the presentation of the ideas thus far can help the readers on their way.
+The conclusions of this paper are mostly \textit{negative}.  That is to say, the mathematical structures described here seem unable to offer practical ways to accelerate AGI, unless the reader can discover more ingenious ideas.  Nevertheless the author hopes the presentation of these ideas thus far can help the readers on their way.
 
-\subsection{Basic categorical logic}
+In each section below, we look at one aspect of the categorical structure of logic and speculate on how it might aid AGI architecture.
+
+\subsection{Where is GPT?}
+
+\begin{figure}
+	\includegraphics[scale=.5]{GPT-is-here.png}
+	\caption{(Left) A sheaf of propositions over pairs of natural numbers; (Right) The function space where GPT lives.}
+	\label{fig:GPT-is-here}
+\end{figure}
+
+GPT \cite{chatGPT2020} can be regarded as a \textbf{logic consequence operator} mapping from the space of propositions to itself (as a \textbf{set-valued map}), as shown in Fig.\ref{fig:GPT-is-here}.
+
+\begin{figure}
+	\includegraphics[scale=.4]{I-love-her-she-is-bitch.png}	% width=\textwidth
+	\caption{The equivalence of probability distributions over propositions and over tokens. For simplicity the decomposition for just the leading token is shown.} \label{fig:she-is-bitch}
+\end{figure}
+
+Without loss of generality, GPT can be seen as acting on propositions, as probability distributions on tokens are equivalent to probability distributions on sentences (propositions), see Fig. \ref{fig:she-is-bitch}.
+
+To what extent can we say that GPT outputs a vector in a Curry-Howard type-theoretic space?  The answer is: only in an abstract sense, but not literally.  A neural network (eg. GPT) always maps an input to the the same output vector, as it is a \textit{deterministic} map. Thus it seems meaningless to ask what is the meaning of the \textit{neighborhood} of an output vector, if the network never goes there during inference time.
+
+\begin{figure}
+	\includegraphics[scale=.4]{Transformer-output.png} \qquad
+	\includegraphics[scale=.35]{morning-star.png}
+	\caption{(Left) How probabilistic inference in GPT results in deterministic vector positions; (Right) In HoTT, a path is a proof object of an identity type.}
+	\label{fig:morning-star}
+\end{figure}
+
+Fig.\ref{fig:morning-star}(Left) illustrates why even despite probabilistic sampling, the outputs of GPT seem to follow fixed trajectories (as soon as learning has finished).  Nevertheless, if we artificially ``perturb'' the input, the output probability distribution will change \textit{smoothly}, say from favoring token $A$ to favoring token $B$, as neural networks are always \textit{differentiable} functions.  One can define the \textbf{boundary} between tokens $A$ and $B$ as where their probabilities reverse in magnitude.  This forms a Voronoi-like tessellation of the output space that can be regarded as Curry-Howard type-spaces.
+
+\subsection{Homotopy type theory}
+
+For a neural network to process HoTT information, it needs a way to 
+
+Therefore we can conclude that current neural networks are unlikely to process HoTT structures.
+
+\subsection{Commutativity of $\wedge$ and $\vee$}
+
+Permutation symmetry is the easiest to recognize and implement \cite{Zaheer2017} \cite{Qi2017}.  It is well-known the Transformer is \textbf{equivariant} to permutations of inputs.  This may be seen as evidence that Transformer \textbf{tokens} are proposition-like entities, with the caveat that we may be confusing the propositional level with the sub-propositional level of atomic concepts.  An easy-to-remember example is: $I \heartsuit U \neq U \heartsuit I$, but $I \heartsuit U \wedge U \heartsuit I = U \heartsuit I \wedge I \heartsuit U$.
+
+\subsection{$\forall$ and $\exists$ as adjunctions}
+
+It seems difficult to translate this structure into a structural modification of neural networks.  From our experience in logic-based AI, logic rules are usually implicitly $\forall$-quantified, and $\exists$ is usually implicit by the \textbf{Closed-World Assumption}.
+
+The following two conditions concern the well-behavior of quantification, as described in \cite{Jacobs1999} and on nLab \cite{nLab-beck-chevalley} \cite{nLab-Frobenius}:
+
+\noindent The \textbf{Beck-Chevalley condition}.  
+
+\noindent The \textbf{Frobenius condition} corresponds in logic to saying that $\exists x. (\phi \wedge \psi)$ is equivalent to $(\exists x. \phi) \wedge \psi$ if $x$ is not free in $\psi$.
+
+\subsection{Predicates as fibration}
+
+\subsection{Iteration of $\vdash$ and Looped Transformers}
 
 \subsection{Modal logic}
 
-\subsection{Homotopy type theory}
+Grothendieck topology is re-captured as a modal operator.
+
+\begin{figure}
+	\includegraphics[scale=.4]{possible-worlds-as-sheaf.png} \qquad
+	\includegraphics[scale=.35]{possible-world-single-example.png}
+	\caption{(Left) The set underneath are indexes to possible worlds, for example $\omega_i = \{1,2,3...\}$. Each ``stalk'' represents a possible world, together they form a fibration over the base space.}
+	\label{fig:possible-worlds-as-sheaf}
+\end{figure}
 
 \subsection{Algebraic geometry}
 
@@ -74,60 +136,27 @@ within this correspondence, we have:
 \left\{ \begin{tabular}{cc} points in \\ geometry \end{tabular} \right\} \longleftrightarrow \left\{ \begin{tabular}{cc} prime ideals \end{tabular} \right\}
 \end{equation}
 
-An approach suggested by Yuri Manin is to turn logic into an algebra, such as the Boolean ring (but this can only handle propositional logic).  Varieties defined by such Boolean polynomials \cite{ref_article1} live in the space $\mathbb{Z}_2^n$, the discrete hypercube.  
+An approach suggested by Yuri Manin is to turn logic into an algebra, such as the Boolean ring (but this can only handle propositional logic).  Varieties defined by such Boolean polynomials \cite{Lundqvist2015} live in the space $\mathbb{Z}_2^n$, the discrete hypercube.  
 
 My visualization of the ``Grothendieck picture'' of AGI is like this:
 \begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.7]{Grothendieck-picture.png}}} \nonumber
+\vcenter{\hbox{\includegraphics[scale=0.4]{Grothendieck-picture.png}}} \nonumber
 \end{equation}
 
 One of the interesting discoveries in categorical logic is that every topos admits an \textbf{internal language}.  This is a simple consequence of Curry-Howard: since a type-space corresponds to a logic proposition, and categorical logic interprets a type-space as an object in the category, thus every category (satisfying extra conditions) can be interpreted as having an ``internal'' logic.  The converse of this correspondence is the \textbf{classifying topos} of a logic theory:
 \begin{equation}
 \underset{\footnotesize\text{classifying topos}}{\mathcal{E}_\mathbb{T}} \xrightleftharpoons[]{\; \text{ internal language } \;} \underset{\footnotesize\text{theory}}{\mathbb{T}}
 \end{equation}
+An alternative approach by Ingo Blechschmidt \cite{Blechschmidt2017}.
 
+What is the ``internal logic'' of classical algebraic geometry?  It may allow us to reason about polynomials, but that is different from AI logic.
 \begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.8]{geometric-topos.png}}}
+\vcenter{\hbox{\includegraphics[scale=0.5]{geometric-topos.png}}}
 \end{equation}
 
+% Grothendieck 的方法是透过抽象，将技巧转移到新的范围....  但有没有可能将几何的技巧应用在自然语言逻辑？ 
+
 % 代数几何中最特别的地方是出现了 由代数方程 =0 定义的代数簇，这个带结构的空间 与抽象的 scheme 对应，scheme 是研究代数簇的更抽象而合理的对象。 范畴逻辑来自 Curry-Howard 的传统，我研究的目的是寻找 逻辑在数学中的适当位置，但也寻找逻辑的更 general 形式。 逻辑加入了「数量」运算之后，可以处理「方程」的问题，而在另一方向发展，它处理自然语言的问题。
-
-\begin{table}
-\caption{Table captions should be placed above the
-tables.}\label{tab1}
-\begin{tabular}{|l|l|l|}
-\hline
-Heading level &  Example & Font size and style\\
-\hline
-Title (centered) &  {\Large\bfseries Lecture Notes} & 14 point, bold\\
-1st-level heading &  {\large\bfseries 1 Introduction} & 12 point, bold\\
-2nd-level heading & {\bfseries 2.1 Printing Area} & 10 point, bold\\
-3rd-level heading & {\bfseries Run-in Heading in Bold.} Text follows & 10 point, bold\\
-4th-level heading & {\itshape Lowest Level Heading.} Text follows & 10 point, italic\\
-\hline
-\end{tabular}
-\end{table}
-
-\begin{figure}
-\includegraphics[width=\textwidth]{fig1.eps}
-\caption{A figure caption is always placed below the illustration.
-Please note that short captions are centered, while long ones are
-justified by the macro package automatically.} \label{fig1}
-\end{figure}
-
-\begin{theorem}
-This is a sample theorem. The run-in heading is set in bold, while
-the following text appears in italics. Definitions, lemmas,
-propositions, and corollaries are styled the same way.
-\end{theorem}
-%
-% the environments 'definition', 'lemma', 'proposition', 'corollary',
-% 'remark', and 'example' are defined in the LLNCS documentclass as well.
-%
-
-\subsubsection{Acknowledgements} Please place your acknowledgments at
-the end of the paper, preceded by an unnumbered run-in heading (i.e.
-3rd-level heading).
 
 %
 % ---- Bibliography ----
@@ -136,27 +165,6 @@ the end of the paper, preceded by an unnumbered run-in heading (i.e.
 % References will then be sorted and formatted in the correct style.
 %
 % \bibliographystyle{splncs04}
-% \bibliography{mybibliography}
-%
-\begin{thebibliography}{8}
-\bibitem{ref_article1}
-Author, F.: Article title. Journal \textbf{2}(5), 99--110 (2016)
+\printbibliography
 
-\bibitem{ref_lncs1}
-Author, F., Author, S.: Title of a proceedings paper. In: Editor,
-F., Editor, S. (eds.) CONFERENCE 2016, LNCS, vol. 9999, pp. 1--13.
-Springer, Heidelberg (2016). \doi{10.10007/1234567890}
-
-\bibitem{ref_book1}
-Author, F., Author, S., Author, T.: Book title. 2nd edn. Publisher,
-Location (1999)
-
-\bibitem{ref_proc1}
-Author, A.-B.: Contribution title. In: 9th International Proceedings
-on Proceedings, pp. 1--2. Publisher, Location (2010)
-
-\bibitem{ref_url1}
-LNCS Homepage, \url{http://www.springer.com/lncs}. Last accessed 4
-Oct 2017
-\end{thebibliography}
 \end{document}
