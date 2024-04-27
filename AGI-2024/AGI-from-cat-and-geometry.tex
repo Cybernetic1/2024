@@ -45,20 +45,19 @@
 \begin{abstract}
 To ``situate'' AGI in the context of some current mathematics, so that readers can more easily see whether current mathematical ideas can be fruitfully applied to AGI.
 
-\keywords{AGI  \and categorical logic \and Curry-Howard isomorphism \and homotopy type theory  \and algebraic geometry \and topos theory.}
+\keywords{AGI  \and categorical logic \and homotopy type theory  \and algebraic geometry \and topos theory \and neural-symbolic integration}
 \end{abstract}
 %
 %
 %
 \section{Goal of this paper}
 
-The bottleneck of AGI development is the speed of learning algorithms.  The daily cost of training GPT-4 was rumored to be \$100M by Sam Altman.  To speed up learning, one needs \textbf{inductive biases}, according to the \textbf{No Free Lunch theorem} \cite{Wolpert1997} \cite{Wikipedia-no-free-lunch}.  A principled way to introduce inductive bias is by the structure of logic.  The reason being that, if humans have discovered the structure of logic in this world, an intelligent program may re-discover the same structure.  So our question is:  what is the mathematical structure of logic?
-
+The bottleneck of AGI development is the speed of learning algorithms.  The daily cost of training GPT-4 was rumored to be \$100M by Sam Altman.  To speed up learning, one needs \textbf{inductive biases}, according to the \textbf{No Free Lunch theorem} \cite{Wolpert1997} \cite{Wikipedia-no-free-lunch}.  A principled way to introduce inductive bias is by the structure of logic. 
 % Traditionally this line of research is called algebraic logic, starting from Leibniz and Boole, up to more recent times Tarski's cylindrical algebra and Paul Halmos' work.  
 
 \section{Results thus far}
 
-The conclusions of this paper are mostly \textit{negative}.  That is to say, the mathematical structures described here seem unable to offer practical ways to accelerate AGI, unless the reader can discover more ingenious ideas.  Nevertheless the author hopes the presentation of these ideas thus far can help the readers on their way.
+Most of the ideas in this paper are not yet ready to offer practical ways to accelerate AGI.  Nevertheless the author hopes it can help readers on their way to discover more ingenious ideas.
 
 In each section below, we look at one aspect of the categorical structure of logic and speculate on how it might aid AGI architecture.
 
@@ -66,7 +65,7 @@ In each section below, we look at one aspect of the categorical structure of log
 
 \begin{figure}
 	\includegraphics[scale=.5]{GPT-is-here.png}
-	\caption{(Left) A sheaf of propositions over pairs of natural numbers; (Right) The function space where GPT lives. $\mathbf{P} L = 2^L$ is the power set of $L$.}
+	\caption{(Left) A sheaf of propositions over pairs of natural numbers; (Right) The function space where GPT lives. $\wp(L) = 2^L$ is the power set of $L$.}
 	\label{fig:GPT-is-here}
 \end{figure}
 
@@ -84,7 +83,7 @@ To what extent can we say that GPT output vectors live in a Curry-Howard type-th
 \begin{figure}
 	\includegraphics[scale=.45]{Transformer-output.png} \quad
 	\includegraphics[scale=.35]{morning-star.png}
-	\caption{(Left) How probabilistic inference in GPT results in deterministic vector positions. $N$ = size of vocabulary; (Right) In HoTT, a path is a proof object of an \textbf{identity type}.}
+	\caption{(Left) How probabilistic inference in GPT results in deterministic vector positions. $N$ = size of vocabulary or sentences; (Right) In HoTT, a path is a proof object of an \textbf{identity type}.}
 	\label{fig:morning-star}
 \end{figure}
 
@@ -92,7 +91,7 @@ Fig.\ref{fig:morning-star}(Left) illustrates why even despite probabilistic samp
 
 \subsection{Homotopy type theory (HoTT)}
 
-HoTT is a step along the Curry-Howard tradition where propositions = types = spaces, and such spaces are given \textbf{homotopy} structure.  An example is ``morning star = evening star'', illustrated in Fig.\ref{fig:morning-star}(Right).  But the enterprise does not end here: higher homotopy types give rise to a system of $\infty$-groupoids.  From my shallow understanding of this subject, this seems to suggest that proofs have their own proofs, so that an entire \textbf{inference trace} can be recorded as homotopy paths.  Doing so may be useful from the perspective of \textbf{Truth Maintenance Systems} of classical AI.
+HoTT is a step along the Curry-Howard tradition where propositions = types = spaces, and such spaces are given \textbf{homotopy} structure.  An example is ``morning star = evening star'', illustrated in Fig.\ref{fig:morning-star}(Right).  But the enterprise does not end here: higher homotopy types give rise to a hierarchy up to $\infty$-groupoids.  From my shallow understanding of this subject, this seems to suggest that proofs have their own proofs, so that an entire \textbf{inference trace} can be recorded as homotopy paths.  Doing so may be useful from the perspective of \textbf{Truth Maintenance Systems} of classical AI.
 
 From the previous section we may argue that the output vectors of a neural network can be regarded as \textbf{proof objects} in their respective type-spaces.  However we can also argue that such type-spaces as implemented by neural networks are \textit{unlikely} to have complex internal structures, because one proof object must vary \textit{smoothly} into another proof object.  To be able to process HoTT information, we may need neural networks with \textbf{fractal structure} (this can be implemented using recursion + scaling), but current neural architectures seem to lack it.
 
@@ -116,7 +115,7 @@ Both conditions are ``self-evident'' from the logic perspective, but it remains 
 
 The relevant mental picture here is Fig.\ref{fig:GPT-is-here}(Left). Current neural networks seem to operate in the space $L$ above the base space and are unaware of the predicate-fibration structure.  Knowledge graphs have an obvious \textbf{first-order structure} as they are made of nodes and links.  One can embed nodes into a metric space $D$ and form the Cartesian product $D \times D$, then a link $a\,R\,b$ is just a point sitting vertically above this domain, and the relation $R$ is a point-set or its \textbf{cover}.  This setup may increase efficiency if we know \textit{a priori} that the dataset is first-order.
 
-More interesting is the case of \textbf{higher-order logic} (HOL), which means we can have quantified rules \textit{over} relations, which suggests we should embed rules in the same manner as we embedded first-order objects.  This seems to require the use of \textbf{set-valued maps} \cite{Aubin1990}.
+More interesting is the case of \textbf{higher-order logic} (HOL), which means we can have quantified rules \textit{over} relations, which suggests we should embed rules in the same manner as we embedded first-order objects.  This seems to require, again, the use of \textbf{set-valued maps}.
 
 \subsection{Iteration of $\vdash$ and Looped Transformers}
 
@@ -124,14 +123,27 @@ This idea is easy to implement, and it also comes from an obvious feature of log
 
 \subsection{Modal logic}
 
-Grothendieck topology is re-captured as a modal operator.
-
 \begin{figure}
-	\includegraphics[scale=.4]{possible-worlds-as-sheaf.png} \qquad
-	\includegraphics[scale=.35]{possible-world-single-example.png}
-	\caption{(Left) The set underneath are indexes to possible worlds, for example $\omega_i = \{1,2,3...\}$. Each ``stalk'' represents a possible world, together they form a fibration over the base space.}
+	\includegraphics[scale=.5]{possible-worlds-as-sheaf.png} \qquad
+	\raisebox{.5cm}{\includegraphics[scale=.35]{possible-world-single-example.png}}
+	\caption{(Left) The space underneath are possible worlds, where each world is an \textbf{open set}. Each \textbf{stalk} above represents the propositions true in that world, together they form a \textbf{fibration} over the base space. (Right) The \textbf{structure} for interpreting \textbf{first-order} logic in one world.}
 	\label{fig:possible-worlds-as-sheaf}
 \end{figure}
+
+Fig.\ref{fig:possible-worlds-as-sheaf}(Left) is the setup for \textbf{sheaf semantics} \cite{Goldblatt1984} \cite{Bell1988}, for interpreting \textbf{propositional} modal logic.   On the right is the \textbf{structure} for interpreting \textbf{first-order logic} in a single possible world, which contains a \textbf{domain} for interpreting predicates, relations, and functions.  These two can be combined to interpret \textbf{first-order modal} logic \cite{Awodey2007} \cite{Awodey2014}. The resulting structure is called a \textbf{comma category} \cite{MacLane1997} or \textbf{slice category} and can be denoted $\mathbf{Sets}/K$ where $K$ is the set of worlds.
+
+Special to modal logic are the operators $\Box$ (\textbf{necessity}) and $\Diamond$ (\textbf{possibility}).  Syntactically it is obvious that $\Box \Box A \equiv \Box A$, and Tarski-McKinsey (1944) cf. \cite{Dunn2001} discovered that $\Box$ and $\Diamond$ can be interpreted by the \textit{topological} operations of \textbf{interior} and \textbf{closure} respectively.  % The interior $\mathrm{Int} A$ is defined as the union of all open sets in $A$.  
+% If $\Box A = \mathrm{Int} A =$ Universe then $\Box A$ is interpreted as true.  For example in Fig.\ref{fig:possible-worlds-as-sheaf}(Left) ``I'm single'' is true in all possible worlds, so it can be concluded to be \textit{necessarily} true.  % 
+One could say \textbf{Grothendieck topology} is re-captured as a modal operator in the logic setting \cite{Rodin2014} \S5.9.
+
+Every sheaf automatically admits a \textbf{Yoneda embedding}\footnote{The Yoneda lemma can be understood as saying some object in a category is able to ``represent'' the entire category.  A archetypal example is \textbf{Cayley's theorem} in group theory, that says that every finite group is isomorphic to a subgroup of the symmetric group $\mathfrak{S}_n$. Here the symmetric group is the \textbf{representing object} capable of representing all finite groups.}.  In this case the representation seems to involve the notion of \textbf{UCLA propositions} \cite{Dunn2001} (named after researchers from the University of California) which defines a proposition as \textit{equivalent} to the \textbf{set} of possible worlds in which it is true.
+% it means every world can be represented by a functor from some world into a special world (the \textbf{representing object}).  For this to work, it seems to need the 
+
+Modal logic is also useful for interpreting \textbf{intensional logic} \cite{Stanford2022-intension}.  For example, ``the tallest building in New York'' is a term that can \textbf{designate} different buildings at different times.
+
+In practice, however, the possible worlds we can handle may be just a \textbf{discrete} set with few elements (think of how many \textit{chess moves} you can calculate in your head, each move being one possible world).  %$\mathrm{Int} A$ of a discrete set is just $A$ itself.
+
+The worlds being \textbf{open sets} poses a challenge to implement them on a computer.  It may be easier to handle them \textbf{syntactically} using rules of modal logic, and one suspects this might have happened in current Large Language Models.
 
 \subsection{Algebraic geometry and topos theory}
 
@@ -144,7 +156,11 @@ within this correspondence, ``points'' in geometry are identified with \textbf{p
 %\left\{ \begin{tabular}{cc} points in \\ geometry \end{tabular} \right\} \longleftrightarrow \left\{ \begin{tabular}{cc} prime ideals \end{tabular} \right\}
 %\end{equation}
 
-An approach suggested by Yuri Manin is to turn logic into an \textbf{algebra}, such as the Boolean ring (but this can only handle propositional logic).  Varieties defined by such Boolean polynomials \cite{Lundqvist2015} live in the space $\mathbb{Z}_2^n$, the \textbf{discrete hypercube}.  
+An approach suggested by Yuri Manin \cite{Manin2009} \cite{Manin2018} \S1.1.3d is to turn logic into an \textbf{algebra}, such as the Boolean ring (but this can only handle propositional logic).  Varieties defined by such Boolean polynomials \cite{Lundqvist2015} live in the space $\mathbb{Z}_2^n$, the \textbf{discrete hypercube}.  
+
+The \textbf{algebraization} of logic is a subject with a long history that dates back to Leibniz and George Boole, with more recent names like Tarski, Rasiowa, Sikorski (they're Polish), Paul Halmos \cite{Halmos1962} \cite{Halmos1998}, Don Monk \cite{Monk1971}, the Hungarians Hajnal Andr\'{e}ka and Istv\'{a}n N\'{e}meti \cite{Andreka1991} \cite{Andreka2021}.  
+
+One can push Grothendieck's algebraic geometry to its limit, with the slogan ``logic is geometry controlled by set theory'', but this seems to be a \textit{separate} path from the Curry-Howard-categorical tradition.  Anyway, we now turn to the latter.
 
 %My visualization of the ``Grothendieck picture'' of AGI is like this:
 %\begin{equation}
@@ -156,7 +172,7 @@ One of the interesting discoveries in categorical logic is that every topos admi
 \underset{\footnotesize\text{classifying topos}}{\mathcal{E}_\mathbb{T}} \xrightleftharpoons[]{\; \text{ internal language } \;} \underset{\footnotesize\text{theory}}{\mathbb{T}}
 \end{equation}
 
-Olivia Caramello \cite{Caramello2018} developed an idea where toposes play the central role of ``bridges'' that transfer information between theories (AGI can be seen as the \textbf{common-sense theory} of our physical world).  She showed that for any geometric theory $\mathbb{T}$, interpreted in the Grothendieck topos $\mathcal{E}_\mathbb{T}$, there is a \textbf{universal} model $U$ such that any model of $\mathbb{T}$ up to isomorphism is a pullback of $U$ along a geometric morphism.  This means that the \textbf{classifying topos} of $\mathbb{T}$ is the \textbf{representing object} in a \textbf{Yoneda lemma}\footnote{The Yoneda lemma can be understood as saying some object in a category is able to ``represent'' the entire category.  A archetypal example is \textbf{Cayley's theorem} in group theory, that says that every finite group is isomorphic to a subgroup of the symmetric group $\mathfrak{S}_n$. Here the symmetric group is the \textbf{representing object} capable of representing all finite groups.}.  A diagram in her book is reproduced here with simplifications in Fig.\ref{fig:Caramello-pic}(Left).
+Olivia Caramello \cite{Caramello2018} developed an idea where toposes play the central role of ``bridges'' that transfer information between theories (AGI can be seen as the \textbf{common-sense theory} of our physical world).  She showed that for any geometric theory $\mathbb{T}$, interpreted in the Grothendieck topos $\mathcal{E}_\mathbb{T}$, there is a \textbf{universal} model $U$ such that any model of $\mathbb{T}$ up to isomorphism is a pullback of $U$ along a geometric morphism.  This means that the \textbf{classifying topos} of $\mathbb{T}$ is the \textbf{representing object} in a \textbf{Yoneda embedding}.  A diagram in her book is reproduced here with simplifications in Fig.\ref{fig:Caramello-pic}(Left).
 
 \begin{figure}
 	\includegraphics[scale=.25]{Caramello-picture.png} \qquad
@@ -165,9 +181,9 @@ Olivia Caramello \cite{Caramello2018} developed an idea where toposes play the c
 	\label{fig:Caramello-pic}
 \end{figure}
 
-In a similar vein, Ingo Blechschmidt's PhD thesis \cite{Blechschmidt2017} and his IHES presentation 9 years ago \cite{Blechschmidt-video2015} brings the categorical idea of internal language back to its classical setting in algebraic geometry.  The situation is as depicted in Fig.\ref{fig:Caramello-pic}(Right).  In this setup, the internal logic comes from the (``big'' and ``small'') \textbf{Zariski topology} of the base space, or \textbf{site}.  The basic idea is that the topology of \textbf{open sets} is a \textbf{Heyting algebra} that can be interpreted as \textbf{intuitionistic logic}\footnote{The \textbf{negation} (complement) of an open set has to be another open set, leaving the boundary out, thus $\neg \neg A = A$ is not generally valid, as opposed to classical logic.}.  The external view of ``sheaves of objects'' is simplified to ``plain objects'' in the internal view, where such objects can be rings (such as $\mathcal{O}_{\mathrm{spec} X}$), modules, etc.  The ring $\mathcal{O}_{\mathrm{spec} X}$ contains the polynomials that define the algebraic variety $X$, and the internal logic can be used to reason about such polynomials.
+In a similar vein, Ingo Blechschmidt's PhD thesis \cite{Blechschmidt2017} and his IHES presentation 9 years ago \cite{Blechschmidt-video2015} brings the categorical idea of internal language back to its classical setting in algebraic geometry.  The situation is as depicted in Fig.\ref{fig:Caramello-pic}(Right).  In this setup, the internal logic comes from the (``big'' and ``small'') \textbf{Zariski topology} of the base space, or \textbf{site}.  The basic idea is that the topology of \textbf{open sets} is a \textbf{Heyting algebra} that can be interpreted as \textbf{intuitionistic logic}\footnote{\textbf{Negation} is interpreted by the \textbf{interior} of the complement so as to have open sets all the way.  This leaves the boundary out, thus $A \vee \neg A =$ Universe is not generally valid, as opposed to classical logic.}.  The external view of ``sheaves of objects'' is simplified to ``plain objects'' in the internal view, where such objects can be rings (such as $\mathcal{O}_{\mathrm{spec} X}$), modules, etc.  The ring $\mathcal{O}_{\mathrm{spec} X}$ contains the polynomials that define the algebraic variety $X$, and the internal logic can be used to reason about such polynomials.
 
-Andrei Rodin in his book \cite{Rodin2014} argues that logic is an axiomatic \textbf{abstraction} of the objective world, or as Lawvere \cite{Lawvere1997} \cite{Lawvere2003} puts it, we should ``\textit{concentrate the essence of practice to guide practice}'' (in the Foreword to \cite{Adamek2011}).  This serves as a nice closing remark.
+Andrei Rodin in his book \cite{Rodin2014} argues that logic is an axiomatic \textbf{abstraction} of the objective world, or as Lawvere puts it, we should ``\textit{concentrate the essence of practice to guide practice}'' (in the Foreword to \cite{Adamek2011}).  This serves as a nice closing remark.
 
 % Grothendieck 的方法是透过抽象，将技巧转移到新的范围....  但有没有可能将几何的技巧应用在自然语言逻辑？ 
 
