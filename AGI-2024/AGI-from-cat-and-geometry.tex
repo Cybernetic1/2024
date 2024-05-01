@@ -43,7 +43,7 @@
 \maketitle              % typeset the header of the contribution
 %
 \begin{abstract}
-To ``situate'' AGI in the context of some current mathematics, so that readers can more easily see whether current mathematical ideas can be fruitfully applied to AGI.
+To ``situate'' AGI in the context of some current mathematics, so that readers can more easily see whether certain mathematical ideas can be fruitfully applied to AGI.
 
 \keywords{AGI  \and categorical logic \and homotopy type theory  \and algebraic geometry \and topos theory \and neural-symbolic integration}
 \end{abstract}
@@ -52,7 +52,7 @@ To ``situate'' AGI in the context of some current mathematics, so that readers c
 %
 \section{Goal of this paper}
 
-The bottleneck of AGI development is the speed of learning algorithms.  The daily cost of training GPT-4 was rumored to be \$100M by Sam Altman.  To speed up learning, one needs \textbf{inductive biases}, according to the \textbf{No Free Lunch theorem} \cite{Wolpert1997} \cite{Wikipedia-no-free-lunch}.  A principled way to introduce inductive bias is by the structure of logic. 
+The bottleneck of AGI development is the speed of learning algorithms.  The daily cost of running GPT-4 was rumored to be \$700K by Sam Altman.  To speed up learning, one needs \textbf{inductive biases}, according to the \textbf{No Free Lunch theorem} \cite{Wolpert1997} \cite{Wikipedia-no-free-lunch}.  A principled way to introduce inductive bias is by the structure of logic. 
 % Traditionally this line of research is called algebraic logic, starting from Leibniz and Boole, up to more recent times Tarski's cylindrical algebra and Paul Halmos' work.  
 
 \section{Results thus far}
@@ -139,11 +139,11 @@ One could say \textbf{Grothendieck topology} is re-captured as a modal operator 
 Every sheaf automatically admits a \textbf{Yoneda embedding}\footnote{The Yoneda lemma can be understood as saying some object in a category is able to ``represent'' the entire category.  A archetypal example is \textbf{Cayley's theorem} in group theory, that says that every finite group is isomorphic to a subgroup of the symmetric group $\mathfrak{S}_n$. Here the symmetric group is the \textbf{representing object} capable of representing all finite groups.}.  In this case the representation seems to involve the notion of \textbf{UCLA propositions} \cite{Dunn2001} (named after researchers from the University of California) which defines a proposition as \textit{equivalent} to the \textbf{set} of possible worlds in which it is true.
 % it means every world can be represented by a functor from some world into a special world (the \textbf{representing object}).  For this to work, it seems to need the 
 
-Modal logic is also useful for interpreting \textbf{intensional logic} \cite{Stanford2022-intension}.  For example, ``the tallest building in New York'' is a term that can \textbf{designate} different buildings at different times.
+Modal logic is also useful for interpreting \textbf{intensional logic} \cite{Stanford2022-intension}.  For example, ``the tallest building in New York'' is a term that can \textbf{designate} different buildings at different times (worlds), which requires a \textbf{function} to map the term to different objects at different worlds.  Such functions exist in the structure in Fig.\ref{fig:possible-worlds-as-sheaf}(Right).
 
 In practice, however, the possible worlds we can handle may be just a \textbf{discrete} set with few elements (think of how many \textit{chess moves} you can calculate in your head, each move being one possible world).  %$\mathrm{Int} A$ of a discrete set is just $A$ itself.
 
-The worlds being \textbf{open sets} poses a challenge to implement them on a computer.  It may be easier to handle them \textbf{syntactically} using rules of modal logic, and one suspects this might have happened in current Large Language Models.
+The worlds being \textbf{open sets}, which are idealized objects, is difficult to implement on a computer.  However note that such sets are \textbf{overlapping} as shown in Fig.\ref{fig:possible-worlds-as-sheaf}(Left), and their embedding in \textbf{metric} space is perhaps more meaningful and of practical value.  Alternatively they can be processed \textbf{syntactically} by rules of modal logic, which might have occurred to a certain degree in current Large Language Models (LLMs).
 
 \subsection{Algebraic geometry and topos theory}
 
