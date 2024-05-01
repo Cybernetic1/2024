@@ -93,22 +93,23 @@
 
 The \textbf{input space} is $X = \mathbb{R}^n = n$-dimensional hypercube.  Permutation symmetry implies that only one corner of the hypercube need be considered, this is the \textbf{fundamental domain}.  The \textbf{volume} of this domain over the entire hypercube shrinks exponentially as $n$ grows, which appears to suggest that this symmetry is very significant for efficiency consideration.  We want to quantify the notion of this efficiency.
 
-We want to compare the \textbf{hypothesis spaces} $A$ and $B$:  $A$ = unconstrained, fully-connected neural network with $L$ layers and $N$ total weights.  The parameter space $\Theta_A = \mathbb{R}^N$.  $B$ = symmetric neural network with a special structure but its parameter space is also $\Theta_B = \mathbb{R}^M$.
+We want to compare the \textbf{hypothesis spaces} $A$ and $B$:  $A$ = unconstrained, fully-connected neural network with $L$ layers and $N$ total weights.  The parameter space $A = \Theta_A = \mathbb{R}^N$.  Case $B$ = symmetric neural network with a special structure but nonetheless its parameter space is also of the form $B = \Theta_B = \mathbb{R}^M$.
 
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.7]{no-free-lunch.png}}}
 \end{equation}
 
-It's easier to consider $A$ and $B$ as both embedded in an ambient function space $\mathcal{H}$ that is ``fine'' enough to contain all points of $A$ and $B$ and to measure the ``roughness'' of their landscapes:
+It's easier to consider $A$ and $B$ as both embedded in an ambient function space $\mathcal{H}$ that is ``fine'' enough to contain all points of $A$ and $B$:
 \begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.7]{no-free-lunch-2.png}}}
+\vcenter{\hbox{\includegraphics[scale=0.7]{no-free-lunch-2.png}}} \qquad
+\begin{aligned}
+& \text{Embeddings:} \\
+& {\color{blue}\Theta_A \hookrightarrow} \; \mathcal{H} \\
+& {\color{red}\Theta_B \hookrightarrow} \; \mathcal{H} 
+\end{aligned}
 \end{equation}
 
-
-\begin{itemize}
-	\item Here
-	
-\end{itemize}
+We also need a measure of the ``roughness'' of the landscapes $A$ and $B$ in the function space $\mathcal{H}$.  The objective function $ J = J( f(x_i; \Theta) - y_i ) $.
 
 \end{minipage}
 \end{preview}
