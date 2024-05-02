@@ -109,7 +109,13 @@ It's easier to consider $A$ and $B$ as both embedded in an ambient function spac
 \end{aligned}
 \end{equation}
 
-We also need a measure of the ``roughness'' of the landscapes $A$ and $B$ in the function space $\mathcal{H}$.  The objective function $ J = J( f(x_i; \Theta) - y_i ) $.
+We also need a measure of the ``roughness'' of the landscapes $A$ and $B$ in the function space $\mathcal{H}$.  The objective function is usually of the form $ J = \sum d( f(x_i; \Theta) , y_i ) + \text{Reg}(f)$ where $d$ is some distance function and Reg is a regularization function.
+
+% 问题 1： 究竟是有很多个解分布在不同区域，还是有一个比较大的单一连通的解区域？  似乎是前者，因为有很多不同的初始 directions 是可以得到 non-identical but effectively equivalent 的解。 
+
+% 问题 2： 是否存在很多 local minima 陷阱？ 其实此问题并不影响我们研究的问题。 而且答案似乎是否定的。
+
+
 
 \end{minipage}
 \end{preview}

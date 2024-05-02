@@ -21,18 +21,19 @@
      inkscape:showpageshadow="0"
      inkscape:pageopacity="1"
      inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
+     inkscape:deskcolor="#ffffff"
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="1"
-     inkscape:cx="306"
-     inkscape:cy="606.5"
+     inkscape:cx="331"
+     inkscape:cy="908.5"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer1"
+     showborder="false" />
   <defs
      id="defs2">
     <marker
@@ -245,8 +246,8 @@
          y="49.269024">space A</tspan></text>
     <path
        id="path1181-2"
-       style="fill:none;stroke:#ff0000;stroke-width:0.52916667;stroke-linecap:round;stop-color:#000000;stroke-dasharray:none"
-       d="m 95.625655,180.84976 c 2.28586,7.84902 3.53851,19.33235 -5.811722,23.82676 -6.725222,3.23262 -14.344505,-2.02044 -21.536706,-2.8722 -7.505798,-0.8889 -16.356972,1.99148 -22.554172,-2.33541 -4.692065,-3.27599 -8.978175,-9.88165 -7.543635,-15.42146 2.260772,-8.73057 13.50429,-13.05226 22.190172,-15.47902 7.743305,-2.16343 16.710779,-1.69044 24.069846,1.54736 4.730148,2.08113 9.74125,5.77236 11.186217,10.73397 z"
+       style="fill:none;stroke:#ff0000;stroke-width:0.529167;stroke-linecap:round;stroke-dasharray:none;stop-color:#000000"
+       d="m 94.712721,177.18003 c 3.312472,7.47396 6.085779,18.68754 -2.58135,24.38909 -6.233891,4.10085 -14.485822,-0.0889 -21.727367,0.0264 -7.557301,0.11979 -15.945125,4.15564 -22.664134,0.6941 -5.087139,-2.62081 -10.21612,-8.59566 -9.5334,-14.27735 1.075927,-8.95411 11.642456,-14.73704 19.926986,-18.30077 7.385505,-3.17704 16.335931,-3.90452 24.061137,-1.67735 4.96549,1.43153 10.424207,4.4213 12.518125,9.1458 z"
        sodipodi:nodetypes="asaaaaaa" />
     <text
        xml:space="preserve"
@@ -345,6 +346,283 @@
         </g>
       </g>
     </g>
+    <path
+       id="path1181-7-0"
+       style="fill:none;stroke:#0000ff;stroke-width:0.529167;stroke-linecap:round;stop-color:#000000"
+       d="m 243.20777,185.27706 c 8.09008,31.9799 -7.75318,39.28427 -37.0048,39.81219 -10.71443,0.0815 -23.64927,0.49912 -31.39368,-6.90559 -8.97679,-8.58303 -13.42186,-24.16799 -9.62763,-35.99401 3.74003,-11.6571 16.54996,-20.11273 28.36039,-23.33597 11.83467,-3.22978 26.08098,-0.99407 36.35746,5.70557 6.87583,4.48261 11.47248,13.59396 13.30826,20.71781 z"
+       sodipodi:nodetypes="ccaaaac"
+       inkscape:export-filename="no-free-lunch-2.png"
+       inkscape:export-xdpi="192"
+       inkscape:export-ydpi="192" />
+    <path
+       id="path1181-2-3"
+       style="fill:none;stroke:#ff0000;stroke-width:0.529167;stroke-linecap:round;stroke-dasharray:none;stop-color:#000000"
+       d="m 229.30829,175.63874 c 3.31247,7.47396 6.08577,18.68754 -2.58135,24.38909 -6.23389,4.10085 -14.48583,-0.0889 -21.72737,0.0264 -7.5573,0.11979 -15.94513,4.15564 -22.66414,0.6941 -5.08713,-2.62081 -10.21612,-8.59566 -9.5334,-14.27735 1.07593,-8.95411 11.64246,-14.73704 19.92699,-18.30077 7.38551,-3.17704 16.33593,-3.90452 24.06114,-1.67735 4.96549,1.43153 10.4242,4.4213 12.51812,9.1458 z"
+       sodipodi:nodetypes="asaaaaaa" />
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="185.83972"
+       y="185.87569"
+       id="text1390-7-6"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="185.83972"
+         y="185.87569">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="198.79028"
+       y="193.05765"
+       id="text1390-7-6-4"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-5"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="198.79028"
+         y="193.05765">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="196.67361"
+       y="183.26807"
+       id="text1390-7-6-2"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-54"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="196.67361"
+         y="183.26807">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="205.40482"
+       y="176.91794"
+       id="text1390-7-6-7"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-4"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="205.40482"
+         y="176.91794">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="211.22569"
+       y="173.74307"
+       id="text1390-7-6-43"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-0"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="211.22569"
+         y="173.74307">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="213.71736"
+       y="178.68918"
+       id="text1390-7-6-78"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-6"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="213.71736"
+         y="178.68918">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="224.98402"
+       y="184.06181"
+       id="text1390-7-6-8"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-8"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="224.98402"
+         y="184.06181">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="213.87152"
+       y="191.47015"
+       id="text1390-7-6-431"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-49"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="213.87152"
+         y="191.47015">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="205.40486"
+       y="183.26807"
+       id="text1390-7-6-20"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-68"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="205.40486"
+         y="183.26807">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="189.79445"
+       y="176.91808"
+       id="text1390-7-6-9"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-2"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="189.79445"
+         y="176.91808">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="174.7132"
+       y="189.0889"
+       id="text1390-7-6-6"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-64"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="174.7132"
+         y="189.0889">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="180.00487"
+       y="181.41599"
+       id="text1390-7-6-95"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-04"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="180.00487"
+         y="181.41599">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="181.85695"
+       y="193.32224"
+       id="text1390-7-6-87"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-1"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="181.85695"
+         y="193.32224">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="191.64653"
+       y="196.49724"
+       id="text1390-7-6-72"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-7"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="191.64653"
+         y="196.49724">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="200.11319"
+       y="172.68474"
+       id="text1390-7-6-22"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-61"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="200.11319"
+         y="172.68474">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="216.78194"
+       y="184.85558"
+       id="text1390-7-6-0"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-615"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="216.78194"
+         y="184.85558">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="218.89861"
+       y="175.59515"
+       id="text1390-7-6-94"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-9"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="218.89861"
+         y="175.59515">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="207.7861"
+       y="194.64516"
+       id="text1390-7-6-09"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-17"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="207.7861"
+         y="194.64516">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="221.54445"
+       y="194.64516"
+       id="text1390-7-6-71"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-15"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="221.54445"
+         y="194.64516">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="226.83611"
+       y="190.67641"
+       id="text1390-7-6-97"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-76"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="226.83611"
+         y="190.67641">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="214.4007"
+       y="198.87849"
+       id="text1390-7-6-73"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-65"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="214.4007"
+         y="198.87849">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="183.97362"
+       y="217.39931"
+       id="text1390-7-6-63"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-94"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="183.97362"
+         y="217.39931">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="207.52153"
+       y="216.07639"
+       id="text1390-7-6-81"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-29"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="207.52153"
+         y="216.07639">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:3.52778px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.264583"
+       x="233.4507"
+       y="207.08055"
+       id="text1390-7-6-3"><tspan
+         sodipodi:role="line"
+         id="tspan1388-0-1-90"
+         style="font-size:3.52778px;fill:#000000;stroke-width:0.264583"
+         x="233.4507"
+         y="207.08055">●</tspan></text>
     <ellipse
        style="font-variation-settings:normal;opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.52916667;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
        id="path2821"
