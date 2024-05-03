@@ -109,7 +109,13 @@ It's easier to consider $A$ and $B$ as both embedded in an ambient function spac
 \end{aligned}
 \end{equation}
 
-We also need a measure of the ``roughness'' of the landscapes $A$ and $B$ in the function space $\mathcal{H}$.  The objective function is usually of the form $ J = \sum d( f(x_i; \Theta) , y_i ) + \text{Reg}(f)$ where $d$ is some distance function and Reg is a regularization function.
+We also need a measure of the ``roughness'' of the landscapes $A$ and $B$ in the function space $\mathcal{H}$.  The objective function is usually of the form $$ J = \sum_i d( f(x_i; \Theta) , y_i ) + \text{Reg}(f) $$ where $d$ is some distance function and Reg is a regularization function.
+
+This is a diagram I made up using a Python script and Matplotlib with randomly generated plots:
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=1]{AGI-attractors-1.png}}}
+\end{equation}
+
 
 % 问题 1： 究竟是有很多个解分布在不同区域，还是有一个比较大的单一连通的解区域？  似乎是前者，因为有很多不同的初始 directions 是可以得到 non-identical but effectively equivalent 的解。 
 
