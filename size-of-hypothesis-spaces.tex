@@ -86,13 +86,23 @@
 \begin{minipage}{\textwidth}
 \setlength{\parskip}{0.4\baselineskip}
 
-\section{Motivating example}
+为什么 No Free Lunch 
+
+\section{Motivating example: symmetric functions}
 
 We want to learn, ie, use gradient descent of a neural network to approximate, a symmetric function $y = \hat{f}(\vec{x})$ satisfying the condition $\hat{f}(x_1, ... x_n) = \hat{f}( \sigma \cdot \{x_1, ... x_n\} )$ where $\sigma \in \mathfrak{S}_n$ is a permutation.  The \textbf{input space} is $X = \mathbb{R}^n = n$-dimensional hypercube:
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.7]{cube-corner.png}}}
 \end{equation}
-Permutation symmetry implies that only one corner of the hypercube need be considered, this is the \textbf{fundamental domain}.  The \textbf{volume} of this domain over the entire hypercube shrinks exponentially as $n$ grows, so it appears that this symmetry is very significant for efficiency consideration.  We want to quantify the notion of this efficiency.
+Permutation symmetry implies that only one \textbf{corner} of the hypercube need be considered, this is the \textbf{fundamental domain} of the symmetry group.  The \textbf{volume} of this domain over the entire hypercube shrinks exponentially as $n$ grows, so it appears that this symmetry is very significant for efficiency consideration.  We want to quantify this notion of efficiency.
+
+As a more specific example, consider only \textbf{Boolean} functions of $n$ variables, so the inputs are the $2^n$ \textbf{vertices} of the hypercube.  It is well-known that the number of $n$-ary Boolean functions is $2^{2^n}$.  It can be seen this way:  the $2^n$ vertices of the hypercube forms the entries of the \textbf{truth table}, ie, all permutations of $\top$ and $\bot$ over input variables.  All we need is to assign output truth-values to these table entries;  each such assignment defines a Boolean function.  Thus $2^n \rightarrow \{ \top, \bot \}$.
+
+The number of \textbf{symmetric} Boolean functions $\hat{f}(x_1, ... x_n)$ does not depend on the order of its arguments.  So it only depends on the \textbf{number} of 1's in the input.  There could be 0, 1, ... up to $n$ 1's in the input, which correspond to vertices of a \textbf{corner} of the $n$-dimension hypercube.  We only need to map this corner to $\{ \top, \bot\}$.  The number of such functions is $2^{n + 1}$.
+
+The ratio of all Boolean functions : symmetric Boolean functions = $2^{2^n} : 2^{n+1} = 2^{2^n - (n+1)}$ of which the linear term is insignificant.  This is a huge number, and this example is illustrative of the general case of functions in $\mathbb{R}^n$ because learning in high dimensions is \textbf{dominated} by the dimensions rather than the ``ups and downs'' along a particular direction.
+
+One last question is that $2n + 1$ seems to be a too-small number of distinct propositions for the purpose of AGI (as each vertex represents a proposition).  To be able to represent more propositions, we can increase the number of points along a single dimension, so the functions are not binary-valued but $k$-ary.  The limit of this process is the continuum, ie $\mathbb{R}^n$ or $[0,1]^n$, the usual setting of neural networks.  As we increase $k$, the number of distinct points in the lower corner is given by ${}_{k+n-1}C_{n}$, ie, the number of ways to choose $n$ objects out of $k$ objects, with replacement, and with order unimportant.  Note that this number grows exponentially as $k$ increases, so it provides many distinct points to represent propositions for AGI.
 
 \section{Finding the right space setting}
 
