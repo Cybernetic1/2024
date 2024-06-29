@@ -86,8 +86,6 @@
 \begin{minipage}{\textwidth}
 \setlength{\parskip}{0.4\baselineskip}
 
-为什么 No Free Lunch 
-
 \section{Motivating example: symmetric functions}
 
 We want to learn, ie, use gradient descent of a neural network to approximate, a symmetric function $y = \hat{f}(\vec{x})$ satisfying the condition $\hat{f}(x_1, ... x_n) = \hat{f}( \sigma \cdot \{x_1, ... x_n\} )$ where $\sigma \in \mathfrak{S}_n$ is a permutation.  The \textbf{input space} is $X = \mathbb{R}^n = n$-dimensional hypercube:
@@ -186,8 +184,6 @@ Perhaps the most crucial thing we want to prove, or at least find indirect evide
 
 % 问题 2： 是否存在很多 local minima 陷阱？ 其实此问题并不影响我们研究的问题。 而且答案似乎是否定的。
 
-
-
 \end{minipage}
 \end{preview}
 
@@ -200,11 +196,51 @@ Perhaps the most crucial thing we want to prove, or at least find indirect evide
 \begin{minipage}{\textwidth}
 	\setlength{\parskip}{0.4\baselineskip}
 
-\section{This}
+\section{Fibration as symmetry}
 
-\begin{itemize}
-	\item Here
-\end{itemize}
+\textbf{Plan of attack}:  The fibration is a topological structure.  Remember Felix Klein's Erlangen programme in which \textbf{geometric structures} are equated with their respective \textbf{isometry groups of invariance}.  Similarly, we can express a fibration (a topological structure) as an invariance under some appropriate transformation group $G$.  Next, we define a class of functions (supposed to be the neural networks we wish to build) which are invariant under the same group $G$.  By the logic of the Erlangen programme, this is equivalent to saying that these functions are defined over the topological structure of fibrations, which is our goal.
+
+\subsection{Definition of a fiber bundle}
+
+A quadruple $\xi = (X, p, B, F)$ is a \textbf{fiber bundle} if:
+\begin{enumerate}[label=(\roman*)]
+	\item $X$ is a topological space called the \textbf{total space}
+	\item $B$ is a topological space called the \textbf{base space}
+	\item $F$ is a topological space called the \textbf{fiber} of $\xi$
+	\item $p: X \rightarrow B$ is a continuous surjective map called the \textbf{fiber bundle projection}
+	\item the inverse image $p^{-1}(b) = F_b$ is \textbf{homeomorphic} to $ F ,\; \forall b \in B $
+	\item $B$ has an open covering $\{ U_i \}_{i \in I}$ such that $\forall i, \; p^{-1}(U_i) $ is \textbf{homeomorphic} to $U_i \times F$, with the projection $p$ yielding the first factor $U_i$.  
+\end{enumerate}
+
+We may use the symbol $\cong$ to denote homeomorphism, eg:  $p^{-1}(b) \cong F$.
+
+\subsection{Definition of a bundle morphism}
+
+If $\mathrel{\substack{X\\\downarrow \\B}  {\scriptstyle p}}$ and $\mathrel{\substack{Y\\\downarrow \\A}  {\scriptstyle q}}$ are fiber bundles, then the double map $\sigma = (c,\gamma)$ is a \textbf{bundle morphism} if the following diagram commutes:
+\begin{equation}
+\begin{tikzcd}[]
+	X \arrow[r,"c"] \arrow[d,"p", swap] & Y \arrow[d,"q"] \\
+	B \arrow[r,"\gamma"] & A
+\end{tikzcd}
+\label{bundle-morphism}
+\end{equation}
+
+The group $G$ of such morphisms $\sigma \in G$ is the \textbf{transformation group} we're looking for.  We can turn around the definition of a fiber bundle, using the idea of \textbf{invariance} under $G$, as follows:
+
+\subsection{Alternative definition of a fiber bundle (using invariance)}
+
+If $\mathrel{\substack{X\\\downarrow \\B}  {\scriptstyle p}}$ is any projection, and if under any morphism $\sigma = (c,\gamma)$ such that diagram (\ref{bundle-morphism}) commutes, and if the following invariance hold:
+
+\begin{enumerate}[label=(\roman*)]
+	\item $\forall b \in B, \exists a \in A. \quad p^{-1}(b) \cong q^{-1}(a) $
+	
+	\item $\forall i \in I, \exists j \in J. \quad p^{-1}(U_i) \cong q^{-1}(U_j) $
+\end{enumerate}
+then $\mathrel{\substack{X\\\downarrow \\B}  {\scriptstyle p}}$ is a fiber bundle.
+
+\textbf{\uline{Want}}.  $F$ is defined on a structure which is a bundle.
+
+\textbf{\uline{Have}}.  $ F(x) = F(\sigma \cdot x) \quad \forall \sigma \in G $. $F$ is invariant under a certain transformation group $G$.  Bundle $\xi$ is defined by an invariance under group $G$.  $F$ is defined over what kind of \textbf{space}?  The invariance of $F$ perhaps delineates a fundamental domain and that is the fibration structure?
 
 \end{minipage}
 \end{preview}
@@ -218,11 +254,36 @@ Perhaps the most crucial thing we want to prove, or at least find indirect evide
 \begin{minipage}{\textwidth}
 \setlength{\parskip}{0.4\baselineskip}
 
-\section{This}
+\section{Fundamental domains}
 
-\begin{itemize}
-	\item Here
-\end{itemize}
+The paper \textit{Group-invariant machine learning by fundamental domain projections} [Aslan, Platt, Sheard 2022], by a team of researchers from London, is very inspiring to us.  They study the problem of machine learning over data sets that have group-invariant structure.  One of the simplest such examples is permutation invariance.  There is a way to build neural networks that are \textit{intrinsically} invariant under permutation of input variables.  They are expressed as sums of single-variable functions, which can be shown to be a universal form of all permutation-invariant functions;  its proof involves the Kolmogorov-Arnold representation theorem.
+
+But instead of building such \textit{intrinsic} invariant neural networks, the authors of the paper proposed a novel approach based on \textbf{projections to fundamental domains}.  This can be explained by the following diagram, where $\beta: X \rightarrow Y$ is the 
+\begin{equation}
+\begin{tikzcd}[column sep=large]
+	X \arrow[r,"\beta"] \arrow[d,"\pi", swap] & Y \\
+	\overline{\mathcal{F}} \arrow[ur,"\overline{\beta}", swap]
+\end{tikzcd}
+\end{equation}
+
+\subsection{Some examples of fundamental domains}
+
+
+
+The following are examples I created to get an intuitive understanding of fundamental domains for \textbf{continuous groups}:
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.7]{fundamental-domain-examples.png}}}
+\end{equation}
+
+\begin{enumerate}[label=(\roman*)]
+	\item If the group $G$ = \{ rotations about the origin at various radii \}, then the fundamental domain is any ray from the origin
+	
+	\item If $G$ = \{ horizontal translations at various heights \}, then the fundamental domain is any vertical straight line
+	
+	\item Similar to (ii), for vertical translations
+
+	\item If $G$ is the group of (ii) and (iii) combined, then the fundamental domain is just any point, and the function is a constant function.
+\end{enumerate}
 
 \end{minipage}
 \end{preview}
