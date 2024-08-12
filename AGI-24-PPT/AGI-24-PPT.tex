@@ -111,7 +111,10 @@
 % \usepackage{newtxtext,newtxmath}	% Times New Roman font
 % \usepackage{sansmath}
 
+\let\oldtextbf\textbf
+\renewcommand{\textbf}[1]{\textcolor{blue}{\oldtextbf{#1}}}
 \newcommand{\emp}[1]{\textbf{\color{violet}#1}}
+
 \newcommand{\vect}[1]{\boldsymbol{#1}}
 \newcommand{\tab}{\hspace*{1cm}}
 \newcommand*\confoundFace{$\vcenter{\hbox{\includegraphics[scale=0.2]{../../confounded-face.jpg}}}$}
@@ -140,24 +143,34 @@
 \addtocounter{page}{-1}
 \begin{frame}[noframenumbering]
 \frametitle{Contents}
-\tableofcontents
-% \vspace*{0.5cm}
-% 多谢 支持 \smiley
+\fontsize{10pt}{8}\selectfont
+My paper was not very well-written, nor easy to understand.  That's not usually my style, but if I don't embellish the paper with some pretensions, it may not get published \smiley  \ \ In this presentation I try to explain my ideas more easily: \\
+
+\begin{enumerate}[I]
+	\item In the first part I try to explain how the theory of ``\textbf{No Free Lunch}'' and inductive biases is a basis for accelerating AGI (in particular the learning process).  This is based on an informal argument which I have difficulty making rigorous.
+	
+	\item In the second part I explain \textbf{categorical logic} (as the structure of logic), in particular the notion of ``fibrations'' which describe predicate logics.  But my conclusion is that fibrations are not very useful for accelerating learning, because it is actually isomorphic to the ``boring'' concatenation of tokens that we currently use in LLMs.
+	
+	\item The third part contains an idea that I discovered after submitting the paper, a kind of ``\textbf{algebraic-logic}'' neural network.  Algebra, algebraic geometry, and polynomials are powerful tools in mathematics with a long history, much older than Curry-Howard isomorphism and category theory.  They may offer more techniques to accelerate learning.
+\end{enumerate}
 \end{frame}
 
 %----------------------------------------------------------------------------------------
 %	PRESENTATION SLIDES
 %----------------------------------------------------------------------------------------
 
-\section{How does ``No Free Lunch'' guide us to accelerate AGI?}
-\subsection{The hypothesis space, ie. the space of AGIs}
-\subsection{A motivating example: symmetric NNs}
-\subsection{Dumb structures and dumb knowledge}
-\section{Categorical logic vs algebraic logic}
-\section{Fibrations in particular}
-
 \part{How does ``No Free Lunch'' guide us to accelerate AGI?}
 \frame{\partpage}
+
+\begin{frame}
+\frametitle{The basic argument}
+\begin{itemize}
+	\item We know very little about how \textbf{AGI solutions} are distributed in the hypothesis space (ie parameter space of neural networks), but exploring this space is very expensive (= training large models)
+	\item We know with some certainty that at least one AGI solution exists in the structural \textbf{sub-space} conforming to formal symbolic logic (the kind that humans are familiar with).
+	\item By a probabilistic argument based on ``\textbf{ignorance}'' \footnote{similar to the argument we make to assign 1/6 to the rolling of a die}, it seems reasonable to confine our search within this sub-space rather than in other ``unknown'' regions.  But I'm not sure if this argument is sound, perhaps the reader can help validate or disprove it?
+\end{itemize}
+\end{frame}
+
 
 \begin{frame}
 \frametitle{The hypothesis space, ie. the space of AGIs}
@@ -178,13 +191,13 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{What can ``No Free Lunch'' say about the space of AGIs?}
+\frametitle{The distance metric in gradient descent}
 \begin{itemize}
 	\item We believe a fair coin toss has probability 1/2 by making an \textbf{ignorance assumption} and applying the maximum entropy principle.  The ignorance assumption says that we have no reason to believe that one side of the coin is more probable than the other.
 
 	\item By a similar argument, 
 		\begin{equation}
-		\vcenter{\hbox{\includegraphics[scale=0.15]{hypercube.png}}}
+		\Theta = \vcenter{\hbox{\includegraphics[scale=0.15]{hypercube.png}}}
 		\nonumber
 		\end{equation}
 \end{itemize}
@@ -332,7 +345,7 @@ is equivalent to $A \times A \times A$.
 
 \end{frame}
 
-\part{The ``algebraic logic'' approach}
+\part{``Algebraic-logical'' neural networks}
 \frame{\partpage}
 
 \begin{frame}
@@ -347,7 +360,7 @@ is equivalent to $A \times A \times A$.
 \end{frame}
 
 \begin{frame}
-\frametitle{``Algebraic-logical'' neural networks}
+\frametitle{Neural networks with polynomial activation functions}
 \fontsize{10pt}{8}\selectfont
 \begin{itemize}
 	\item This is the basic setup of an auto-encoder which is the common setting for all current LLM models:
@@ -376,7 +389,7 @@ is equivalent to $A \times A \times A$.
 \end{frame}
 
 \begin{frame}
-\frametitle{Algebraic-logical neural networks (2)}
+\frametitle{One layer of neural network as a polynomial function}
 \fontsize{10pt}{8}\selectfont
 \begin{itemize}
 	\item Andr\'{e}ka-N\'{e}meti \cite{Andreka2021} developed a \textbf{general framework} for studying algebraic logic, based on model-theoretic semantics.  A logic is $\langle F, M, mng, \vdash, \Vdash \rangle$ where $F$ = set of formulas, $M$ = class of models or possible worlds, $mng$ = meaning function: $F \times M \rightarrow \mathrm{Sets}$, $\vdash$ = syntactic provability, $\Vdash$ = semantic consequence, usually defined via $mng$.
@@ -398,7 +411,7 @@ is equivalent to $A \times A \times A$.
 \end{frame}
 
 \begin{frame}
-\frametitle{Algebraic-logical neural networks (3)}
+\frametitle{How does it help to accelerate learning?}
 \begin{itemize}
 	\item I just newly discovered this and need more time to explore.
 	
