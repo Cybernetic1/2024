@@ -192,14 +192,18 @@ My paper was not very well-written, nor easy to understand.  That's not usually 
 
 \begin{frame}
 \frametitle{The distance metric in gradient descent}
+\begin{equation}
+\Theta = \vcenter{\hbox{\includegraphics[scale=0.15]{hypercube.png}}}
+\nonumber
+\end{equation}
 \begin{itemize}
-	\item We believe a fair coin toss has probability 1/2 by making an \textbf{ignorance assumption} and applying the maximum entropy principle.  The ignorance assumption says that we have no reason to believe that one side of the coin is more probable than the other.
+	\item Training large models is costly.  We want to measure the cost of training neural networks by measuring the \textbf{size} of the hypothesis space $\Theta$ that we're searching.
+	
+	\item Gradient descent works by $\nabla_\Theta = \sum \frac{\partial}{\partial\theta_i}$.  Each step is a ``delta'' move in the parameter space $\Theta$.
 
-	\item By a similar argument, 
-		\begin{equation}
-		\Theta = \vcenter{\hbox{\includegraphics[scale=0.15]{hypercube.png}}}
-		\nonumber
-		\end{equation}
+	\item The distance metric we can use in the space $\Theta$ is the \textbf{Euclidean} one given by $ds^2 = d\theta_1^2 + d\theta_2^2 + ...$.
+	
+	\item So the \textbf{area} of parameter space measured by Euclidean metric is an estimation of how long it may take to converge to an AGI solution.
 \end{itemize}
 \end{frame}
 
@@ -219,6 +223,25 @@ My paper was not very well-written, nor easy to understand.  That's not usually 
 			\includegraphics[scale=0.45]{gradient-descent-from-hypercube.png}
 		\end{column}
 	\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Finding an intelligent structure and filling it with intelligent knowledge}
+\fontsize{10pt}{8}\selectfont
+\begin{itemize}
+	\item Symmetry allows us to restrict searching to a particular \textbf{sub-space} of the parameter space:
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=0.4]{subspace-of-hypercube.png}}}
+	\nonumber
+	\end{equation}
+	
+	\item After restricting to the right \textbf{structure}, we still need gradient descent to search for the right \textbf{knowledge}:
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=0.5]{structure-finding-vs-learning.png}}}
+	\nonumber
+	\end{equation}
+	The parameter space represents both structure and knowledge.
+\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -242,9 +265,10 @@ My paper was not very well-written, nor easy to understand.  That's not usually 
 \end{frame}
 
 \begin{frame}
-\frametitle{A motivating example: symmetric neural networks}
+\frametitle{Motivating example: symmetric neural networks}
 \fontsize{10pt}{8}\selectfont
 \begin{itemize}
+	\item Now we turn to an artificial example where the No Free Lunch strategy can be proven to work.
 	\item Permutation symmetry or commutativity ($ab = ba$) is the best-known symmetry in mathematics
 	\item The input space, as a hypercube, is symmetric under exchange of vertices. The \textbf{fundamental domain} of this symmetry is one \textit{corner} of the hypercube:
 	\begin{equation}
@@ -257,13 +281,13 @@ My paper was not very well-written, nor easy to understand.  That's not usually 
 \end{frame}
 
 \begin{frame}
-	\frametitle{A motivating example: symmetric neural networks}
+	\frametitle{Motivating example: symmetric neural networks (2)}
 	\begin{itemize}
 		\item If we restrict to binary logic, the total number of Boolean functions in $n$ variables is $2^{2^n}$ whereas the number of \textbf{symmetric} Boolean functions is $2^{n+1}$.  So we clearly see an \textit{exponential} reduction in the size of the hypothesis space.
 		
-		\item Tantalizingly, the Transformer also has this permutation symmetry, and researchers have proposed that Transformers are capable of performing \textit{syntactic} manipulations similar to those in proofs of symbolic / predicate logic.
+		\item Tantalizingly, the \textbf{Transformer} also has this permutation symmetry, and researchers have proposed that Transformers are capable of performing \textit{syntactic} manipulations similar to those in proofs of symbolic / predicate logic.
 		
-		\item We can further relax the restriction of binary logic to $k$-ary logic, ie, increase the number of lattice points in the hypercube, and the above analysis still holds qualitatively.
+		\item We can further relax the restriction of binary logic to $k$-ary logic, ie, increase the number of lattice points in the hypercube, and the above analysis still holds qualitatively.  In the limit, this seems to apply to \textbf{smooth functions} as well.
 	\end{itemize}
 \end{frame}
 
@@ -287,7 +311,7 @@ Many readers are already familiar with this, so I'll just highlight some interes
 \end{frame}
 
 \begin{frame}
-\frametitle{Categorical logic \textbf{clashes} with algebraic logic}
+\frametitle{Categorical logic \oldtextbf{clashes} with algebraic logic}
 \fontsize{10pt}{8}\selectfont
 	\begin{itemize}
 	\item The late Joachim Lambek proposed a ``trinity'' between category theory, logic, and type theory \cite{Lambek1986}:
@@ -311,38 +335,46 @@ Many readers are already familiar with this, so I'll just highlight some interes
 \end{frame}
 
 \begin{frame}
-\frametitle{Definition of a \textbf{fiber bundle}}
-A \textbf{fiber bundle} is a tuple $\xi = (E, p, B, F)$:
-\begin{enumerate}[(i)]
-	\item $E$ = \textbf{total space}
-	\item $B$ = \textbf{base space}
-	\item $F$ = a topological space called the \textbf{fiber} of $\xi$
-	\item $\mathrel{\substack{E\\\downarrow \\B}  {\scriptstyle p}}$ is a continuous surjective map, called the \textbf{projection}
-	\item for each point $b \in B$, the inverse image $p^{-1}(b) = F_b$, called \cthickuline[1.2pt]{red}{the \textbf{fiber over} $b$, is homeomorphic to $F$}
-	\item $B$ has an opening covering $\{ U_a \}_{a \in A}$ such that for each $a \in A$, there is a homeomorphism: $\psi_a: U_a \times F \rightarrow p^{-1}(U_a)$.  \\
-	If $F$ is a discrete space, then the structure $F \hookrightarrow E \stackrel{p}{\rightarrow} B$ is called a \textbf{covering} of $B$.
-\end{enumerate}
-
-The condition (vi) is just a re-phrase of (v) in the form of open sets, similar to the ``gluing'' together of charts in differential manifolds.  So the essential condition is (v).
-
+\frametitle{Definition of a \oldtextbf{fiber bundle}}
+\begin{columns}[T]
+	\column{0.99\textwidth}
+	A \textbf{fiber bundle} is a tuple $\xi = (E, p, B, F)$:
+	\begin{enumerate}[(i)]
+		\item $E$ = \textbf{total space}
+		\item $B$ = \textbf{base space}
+		\item $F$ = a topological space called the \textbf{fiber} of $\xi$
+		\item $\mathrel{\substack{E\\\downarrow \\B}  {\scriptstyle p}}$ is a continuous surjective map, called the \textbf{projection}
+		\item for each point $b \in B$, the inverse image $p^{-1}(b) = F_b$, called \cthickuline[1.2pt]{red}{the \textbf{fiber over} $b$, is homeomorphic to $F$}
+		\item $B$ has an opening covering $\{ U_a \}_{a \in A}$ such that for each $a \in A$, there is a homeomorphism: $\psi_a: U_a \times F \rightarrow p^{-1}(U_a)$.  \\
+		If $F$ is a discrete space, then the structure $F \hookrightarrow E \stackrel{p}{\rightarrow} B$ is called a \textbf{covering} of $B$.
+	\end{enumerate}
+	
+	The condition (vi) is just a re-phrase of (v) in the form of open sets, similar to the ``gluing'' together of charts in differential manifolds.  So the essential condition is (v).
+	
+	\column{0.01\textwidth}
+	\hspace*{-3.5cm}
+	\includegraphics[width=3.5cm]{hair-brush.png}
+\end{columns}
 \end{frame}
 
 \begin{frame}
 \frametitle{The ``boring'' cross product}
-
-\begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.1]{hair-brush.png}}}
-\nonumber
-\end{equation}
-
-\begin{equation}
+\fontsize{10pt}{8}\selectfont
+\begin{itemize}
+	\item It was an anti-climax when I realized that fibrations do not offer a symmetry that reduces the size of the hypothesis space.
+	\item An example of fibration for predicate logic is a relation $r(a,b)$ sitting above two entities $a,b$.
+	\item If we treat the relation predicate and the entities as homogeneous atoms, ie. $r,a,b \in A$, then the term's type is just $A \times A \times A$, though it looks like $\substack{A\\\downarrow \\A \times A}$.
+	\item Putting an atom above the other two does not change the fact that the whole type is isomorphic to $A \times A \times A$, and this Cartesian product of types is ``boring'' because it is basically the same as a sequence of ``tokens'' in LLM terminology:
+	\begin{equation}
+	.... \quad
 	\tcbhighmath[boxrule=1pt,arc=6pt,colframe=black,shrink tight,extrude by=2mm]{token} \qquad
 	\tcbhighmath[boxrule=1pt,arc=6pt,colframe=black,shrink tight,extrude by=2mm]{token} \qquad
-	\tcbhighmath[boxrule=1pt,arc=6pt,colframe=black,shrink tight,extrude by=2mm]{token}
+	\tcbhighmath[boxrule=1pt,arc=6pt,colframe=black,shrink tight,extrude by=2mm]{token} \quad ....
 	\nonumber
-\end{equation}
-is equivalent to $A \times A \times A$.
-
+	\end{equation}
+	which we have been using all the time.
+	\item If we do not endow the fibration with more structure (such as a structure group $G$, giving rise to a $G$-bundle), then we are left with the boring Cartesian product, which does not offer any reduction / acceleration.
+\end{itemize}
 \end{frame}
 
 \part{``Algebraic-logical'' neural networks}
@@ -357,6 +389,11 @@ is equivalent to $A \times A \times A$.
 	\item For example, \textbf{cylindric algebra}\footnote{see Wikipedia for a quick intro} has additional operations $\mathsf{c}_i$ (cylindrification) and $\mathsf{Id}_{ij}$ (diagonal).
 	\item Notice that algebra does not appear in the ``trinity'' (\ref{eqn:trinity}).  The Curry-Howard approach is not directly related to algebraic logic.
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+\centering
+\includegraphics[scale=0.45]{Lambek-quote.png}
 \end{frame}
 
 \begin{frame}
@@ -404,9 +441,9 @@ is equivalent to $A \times A \times A$.
 	= \begin{pmatrix} Q \\ x \end{pmatrix}
 	\nonumber
 	\end{gather}
-	where $\cubic$ = element-wise activation function, $M$ = transformation matrix.
+	where $\cubic$ = element-wise activation function (polynomial), $M$ = transformation matrix.
 	
-	\item This is a bit tricky because our algebraic logic include terms that appear as input-output objects, as well as \textbf{maps} between such objects.  But the Andr\'{e}ka-N\'{e}meti framework can still be applied in essence.
+	\item This is a bit tricky because our algebraic logic include terms that appear as input-output objects, as well as \textbf{maps} between such objects.  But the Andr\'{e}ka-N\'{e}meti framework is still applicable in essence.
 \end{itemize}
 \end{frame}
 
@@ -415,7 +452,7 @@ is equivalent to $A \times A \times A$.
 \begin{itemize}
 	\item I just newly discovered this and need more time to explore.
 	
-	\item What we have here is very interesting: on the one hand we have a deep neural network capable of \textbf{gradient descent};  on the other hand it is also an algebraic logic.
+	\item What we have here is quite interesting: on the one hand, a deep neural network capable of \textbf{gradient descent};  on the other hand it is also an algebraic logic.
 	
 	\item Our goal remains the same: to accelerate learning.  
 \end{itemize}
@@ -423,7 +460,7 @@ is equivalent to $A \times A \times A$.
 
 \begin{frame}
 \frametitle{References}
-\cc{多谢收看}{Thanks for watching} \smiley \\
+\cc{多谢收看}{Thanks for watching} \smiley \vspace{1cm}
 \printbibliography
 \end{frame}
 
