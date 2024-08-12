@@ -116,6 +116,7 @@
 \newcommand{\tab}{\hspace*{1cm}}
 \newcommand*\confoundFace{$\vcenter{\hbox{\includegraphics[scale=0.2]{../../confounded-face.jpg}}}$}
 \newcommand{\smiley}{$\vcenter{\hbox{\includegraphics[scale=0.05]{../../smiling-face.png}}}$}
+\newcommand{\cubic}{\vcenter{\hbox{\includegraphics[scale=1]{../../cubic-symbol.png}}}}
 
 \makeatletter
 \renewcommand{\boxed}[1]{\fbox{\m@th$\displaystyle\scalebox{0.9}{#1}$} \,}
@@ -160,16 +161,20 @@
 
 \begin{frame}
 \frametitle{The hypothesis space, ie. the space of AGIs}
+\begin{itemize}
+	\item In deep learning, our hypothesis space $\Theta$ = neural networks = parameter space = weight space = $\mathbb{R}^n$ or $[0,1]^n$ if truncated.
 
-In deep learning, our hypothesis space = neural networks = parameter space = weight space = $\mathbb{R}^n$ or $[0,1]^n$ if truncated.
+	\item It looks like this (left):
+	\begin{equation}
+	\Theta = \vcenter{\hbox{\includegraphics[scale=0.18]{hypercube.png}}} \qquad \qquad
+	\vcenter{\hbox{\includegraphics[scale=0.4]{error-landscape.png}}}
+	\nonumber
+	\end{equation}
 
-It looks like this:
-\begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.3]{hypercube.png}}}
-\nonumber
-\end{equation}
-
-Imagine a loss function as sitting above this space;  We seek to minimize it by gradient descent.
+	\item Imagine a loss function as sitting above the hypercube;  We seek to minimize it by \textbf{gradient descent}.
+	
+	\item When people visualize gradient descent, they tend to think of the above figure (right), but in practice, the ``ups and downs'' along one dimension is \textit{dominated} (overshadowed) by the sheer number of dimensions.
+\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -230,7 +235,8 @@ Imagine a loss function as sitting above this space;  We seek to minimize it by 
 	\item Permutation symmetry or commutativity ($ab = ba$) is the best-known symmetry in mathematics
 	\item The input space, as a hypercube, is symmetric under exchange of vertices. The \textbf{fundamental domain} of this symmetry is one \textit{corner} of the hypercube:
 	\begin{equation}
-	\vcenter{\hbox{\includegraphics[scale=1]{cube-corner.png}}}
+	\vcenter{\hbox{\includegraphics[scale=0.6]{cube-corner.png}}}
+	\nonumber
 	\end{equation}
 	(Note that this hypercube is the \textit{input} space, not the mapping / hypothesis space)
 	\item Building a symmetry into a neural network may seem a daunting task, but recent research shows that merely \textbf{projecting} all data points to the fundamental domain has the same effect as achieving symmetry \cite{Aslan2023}.
@@ -248,14 +254,14 @@ Imagine a loss function as sitting above this space;  We seek to minimize it by 
 	\end{itemize}
 \end{frame}
 
-\part{Categorical logic vs algebraic logic}
+\part{Categorical logic, and fibrations in particular}
 \frame{\partpage}
 
 \begin{frame}
 \frametitle{Curry-Howard isomorphism}
-Many readers may be familiar with this already, so I'll just highlight some interesting points...
+Many readers are already familiar with this, so I'll just highlight some interesting points...
 \begin{itemize}
-	\item The starting point of the Curry-Howard isomorphism is to make the following identification:
+	\item The starting point of the Curry-Howard isomorphism is the following correspondence:
 	\begin{equation}
 		\boxed{implication in logic} A \rightarrow B \qquad A \stackrel{f}{\rightarrow} B \; \boxed{function in type theory}
 		\nonumber
@@ -263,7 +269,7 @@ Many readers may be familiar with this already, so I'll just highlight some inte
 	\item An example in type theory: ``\textbf{currying}'' means to convert a 2-argument function into a single-argument function which returns another function, ie. $f(x,y) = (g(x))(y)$.  \\
 	The types of $f$ and $g$ are equivalent, ie, $X \rightarrow (Y \rightarrow Z) \simeq (X \times Y) \rightarrow Z$. \\
 	If we treat the above as logic it becomes: $X \rightarrow (Y \rightarrow Z) \equiv (X \wedge Y) \rightarrow Z$.  One can verify this is a valid logic formula.
-	\item This an other amazing coincidences led us to believe that CHI has some deep truth in it.
+	\item This and other amazing coincidences led us to believe that CHI has some deep truth in it.
 \end{itemize}
 \end{frame}
 
@@ -271,19 +277,19 @@ Many readers may be familiar with this already, so I'll just highlight some inte
 \frametitle{Categorical logic \textbf{clashes} with algebraic logic}
 \fontsize{10pt}{8}\selectfont
 	\begin{itemize}
-	\item The late Joachim Lambek proposed a ``holy trinity'' between category theory, logic, and type theory:
+	\item The late Joachim Lambek proposed a ``trinity'' between category theory, logic, and type theory \cite{Lambek1986}:
 		\begin{equation}
 		\begin{tikzcd}[row sep=1.5em,ampersand replacement=\&]
 			\& \boxed{category theory} \arrow[dr,dash] \\
 			\boxed{logic} \arrow[ur,dash] \arrow[rr,dash,"Curry-Howard"] \&\& \boxed{type-theory}
 		\end{tikzcd}
-		\nonumber
+		\label{eqn:trinity}
 		\end{equation}
-	\item But the Curry-Howard approach is fundamentally \textit{incompatible} with the \textbf{algebraic logic} approach, for example:
+	\item But the Curry-Howard approach seems, at least on the surface, \textit{incompatible} with the \textbf{algebraic logic} approach, for example:
 		\begin{equation}
 		\begin{tikzcd}[row sep=2em,ampersand replacement=\&]
 		\parbox{2.2cm}{\centering $f: A \rightarrow B$ \boxed{type theory}} \arrow[dr,dash,red,squiggly,"incompatible"] \& \\
-		 \parbox{1.5cm}{\centering $a \rightarrow b$ \boxed{logic}} \arrow[u,"Curry-Howard"] \arrow[r] \& \parbox{1.8cm}{\centering $a + ab = 0$ \boxed{algebraic logic}}
+		 \parbox{1.5cm}{\centering $a \rightarrow b$ \boxed{logic}} \arrow[u,"Curry-Howard"] \arrow[r] \& \parbox{1.8cm}{\centering $a \oplus ab = 0$ \boxed{algebraic logic}}
 		\end{tikzcd}
 		\nonumber
 		\end{equation}
@@ -291,12 +297,9 @@ Many readers may be familiar with this already, so I'll just highlight some inte
 	\end{itemize}
 \end{frame}
 
-\part{Fibrations in particular}
-\frame{\partpage}
-
 \begin{frame}
 \frametitle{Definition of a \textbf{fiber bundle}}
-A \textbf{fiber bundle} is a tuple $\xi = (E, p, B, F)$ such that:
+A \textbf{fiber bundle} is a tuple $\xi = (E, p, B, F)$:
 \begin{enumerate}[(i)]
 	\item $E$ = \textbf{total space}
 	\item $B$ = \textbf{base space}
@@ -335,16 +338,74 @@ is equivalent to $A \times A \times A$.
 \begin{frame}
 \frametitle{Algebraic logic}
 \begin{itemize}
-	\item Traditionally, algebra (and algebraic geometry) is concerned with systems of polynomials over the ``classical'' number fields $\mathbb{R}$ or $\mathbb{C}$.  The polynomials are built on addition and multiplication of numbers, that we're all familiar with.
-	\item Propositional logic $(B, \wedge, \vee, \neg, \top, \bot)$ can be equated with Boolean rings $(B, \cdot, +, -, 0, 1)$, with ring multiplication identified as $\wedge$ and ring addition identified as symmetric difference (``XOR'').
+	\item Traditionally, algebra (and algebraic geometry) is concerned with systems of \textbf{polynomials} over the ``classical'' number fields $\mathbb{R}$ or $\mathbb{C}$.  The polynomials are built upon addition and multiplication of numbers, that we're all familiar with.
+	\item Propositional logic $(B, \wedge, \vee, \neg, \top, \bot)$ can be equated with \textbf{Boolean rings} $(B, \cdot, \oplus, -(), 0, 1)$, with ring multiplication identified as $\wedge$ and ring addition identified as symmetric difference (``XOR'').
 	\item As predicate logic involves more operators (eg. $\forall$ and $\exists$), the classical algebra of numbers seems inadequate to represent them.
-	\item For example, cylindric algebra has special operators $\mathsf{c}_i$ (cylindrification) and $\mathsf{Id}_{ij}$ (diagonal).
+	\item For example, \textbf{cylindric algebra}\footnote{see Wikipedia for a quick intro} has additional operations $\mathsf{c}_i$ (cylindrification) and $\mathsf{Id}_{ij}$ (diagonal).
+	\item Notice that algebra does not appear in the ``trinity'' (\ref{eqn:trinity}).  The Curry-Howard approach is not directly related to algebraic logic.
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{Basic setup}
+\frametitle{``Algebraic-logical'' neural networks}
+\fontsize{10pt}{8}\selectfont
+\begin{itemize}
+	\item This is the basic setup of an auto-encoder which is the common setting for all current LLM models:
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=0.35]{auto-encoder.png}}}
+	\nonumber
+	\end{equation}
 
+	\item The predictor / model can be construed as a logical \textbf{knowledge-base} (KB) making inferences:
+	\begin{equation}
+	\begin{tikzcd}[row sep=0em,column sep=5em,ampersand replacement=\&,| /.tip = {Bar[scale=2]}]
+		\boxed{input state} \; \Gamma \arrow[r, |-, "\mbox{\tiny KB}"] \& \Delta \; \boxed{new conclusion} \\
+		\Gamma \arrow[r,"\mbox{\tiny deep NN}", "\mbox{\tiny LLM / GPT / etc}"'] \& \Delta
+	\end{tikzcd}
+	\nonumber
+	\end{equation}
+
+	\item A neural network is composed of multiple layers:
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=0.35]{NN-with-layers.png}}}
+	\nonumber
+	\end{equation}
+
+	\item We can replace the activation functions with \textbf{polynomials}, creating ``\textbf{algebraic}'' neural networks.  Pushing \textbf{Curry-Howard} to its extreme, perhaps each layer of algebraic NN can be identified as a logical KB?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Algebraic-logical neural networks (2)}
+\fontsize{10pt}{8}\selectfont
+\begin{itemize}
+	\item Andr\'{e}ka-N\'{e}meti \cite{Andreka2021} developed a \textbf{general framework} for studying algebraic logic, based on model-theoretic semantics.  A logic is $\langle F, M, mng, \vdash, \Vdash \rangle$ where $F$ = set of formulas, $M$ = class of models or possible worlds, $mng$ = meaning function: $F \times M \rightarrow \mathrm{Sets}$, $\vdash$ = syntactic provability, $\Vdash$ = semantic consequence, usually defined via $mng$.
+	
+	\item For example, in first-order logic, $mng(\psi)$ = set of all \textbf{evaluations} of variables $\vec{x}$ such that the formula $\psi(\vec{x})$ is satisfied in $\mathfrak{M} \in M$.
+
+	\item For our purpose, let's start with a simple logic formula: $\forall x. P(x) \rightarrow Q(x)$.  It can be implemented in \textbf{vector-matrix form}:
+	\begin{gather}
+	\begin{matrix} \cubic \\ \cubic \end{matrix}
+	\begin{pmatrix} P \\ x \end{pmatrix}
+	\begin{pmatrix} M \\ \mathrm{Id} \end{pmatrix}
+	= \begin{pmatrix} Q \\ x \end{pmatrix}
+	\nonumber
+	\end{gather}
+	where $\cubic$ = element-wise activation function, $M$ = transformation matrix.
+	
+	\item This is a bit tricky because our algebraic logic include terms that appear as input-output objects, as well as \textbf{maps} between such objects.  But the Andr\'{e}ka-N\'{e}meti framework can still be applied in essence.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Algebraic-logical neural networks (3)}
+\begin{itemize}
+	\item I just newly discovered this and need more time to explore.
+	
+	\item What we have here is very interesting: on the one hand we have a deep neural network capable of \textbf{gradient descent};  on the other hand it is also an algebraic logic.
+	
+	\item Our goal remains the same: to accelerate learning.  
+\end{itemize}
 \end{frame}
 
 \begin{frame}
