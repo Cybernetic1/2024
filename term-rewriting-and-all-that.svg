@@ -312,12 +312,12 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="688"
+     inkscape:cx="779"
      inkscape:cy="516"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1082"
+     inkscape:window-width="1080"
      inkscape:window-height="1895"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -1489,11 +1489,11 @@
          y="26.674194">《Term Rewriting and All That》解读</tspan></text>
     <text
        xml:space="preserve"
-       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:142.701;display:inline;stroke-width:0.264583"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:152.226;display:inline;stroke-width:0.264583"
        x="203.89668"
        y="1.4284792"
        id="text1027"
-       transform="translate(-26.192233,-11.575901)"><tspan
+       transform="translate(-21.429733,-43.590485)"><tspan
          x="203.89668"
          y="1.4284792"
          id="tspan3">1）word problem 是什么？
@@ -1530,10 +1530,10 @@
 </tspan><tspan
          x="203.89668"
          y="57.872878"
-         id="tspan13">because f = 0, we can take the &quot;largest monomial&quot; in f as </tspan><tspan
+         id="tspan13">because f = 0, we can take the &quot;largest monomial&quot; in f as the </tspan><tspan
          x="203.89668"
          y="64.928428"
-         id="tspan14">the LHS, and the rest of f as RHS.
+         id="tspan14">LHS, and the rest of f as RHS.
 </tspan><tspan
          x="203.89668"
          y="71.983981"
@@ -1541,10 +1541,10 @@
 </tspan><tspan
          x="203.89668"
          y="79.039531"
-         id="tspan16">We ask if a polynomial can be rewritten by the set of </tspan><tspan
+         id="tspan16">We ask if a polynomial can be rewritten by the set of rules to </tspan><tspan
          x="203.89668"
          y="86.09508"
-         id="tspan17">rules to another form.  This is similar to logic deduction.
+         id="tspan17">another form.  This is similar to logic deduction.
 </tspan><tspan
          x="203.89668"
          y="93.15063"
@@ -1552,10 +1552,10 @@
 </tspan><tspan
          x="203.89668"
          y="100.20618"
-         id="tspan19">这里有个重要的问题是：polynomial reduction 似乎不能</tspan><tspan
+         id="tspan19">这里有个重要的问题是：polynomial reduction 似乎不能应付 </tspan><tspan
          x="203.89668"
          y="107.26173"
-         id="tspan20">应付 logic variables，它只能做简单的 符号的改写。
+         id="tspan20">logic variables，它只能做简单的 符号的改写。
 </tspan><tspan
          x="203.89668"
          y="114.31728"
@@ -1570,7 +1570,36 @@
          id="tspan23">taking the cue that Huet's higher-order unification = </tspan><tspan
          x="203.89668"
          y="135.48394"
-         id="tspan24">Buchberger algorithm, </tspan></text>
+         id="tspan24">Buchberger algorithm, 但其实这句说话是错的，应该说
+</tspan><tspan
+         x="203.89668"
+         y="142.53949"
+         id="tspan29">Huet's completion algorithm = Buchberger algorithm
+</tspan><tspan
+         x="203.89668"
+         y="149.59505"
+         id="tspan31">但 Huet 算法是不可判定的，而 Buchberger 必然 terminate
+</tspan><tspan
+         x="203.89668"
+         y="156.65061"
+         id="tspan32">
+</tspan><tspan
+         x="203.89668"
+         y="163.70616"
+         id="tspan33">改写 KB = 寻找 ideal basis，ideal = set of rules = KB
+</tspan><tspan
+         x="203.89668"
+         y="170.76172"
+         id="tspan34">→ polynomial = rule，monomial = term，
+</tspan><tspan
+         x="203.89668"
+         y="177.81728"
+         id="tspan35">这里关键似乎是 logic variables = ？= polynomial variables？
+</tspan><tspan
+         x="203.89668"
+         y="184.87284"
+         id="tspan36">現在最需要看 completion algorithm 如何处理 variables
+</tspan></text>
     <text
        xml:space="preserve"
        style="font-weight:300;font-size:21.3333px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:494.472;display:inline;fill:#000000;stroke-width:0.999999;-inkscape-stroke:none;stop-color:#000000"
@@ -1580,39 +1609,73 @@
        transform="matrix(0.26458334,0,0,0.26458334,9.5420425,3.2807115)"><tspan
          x="55"
          y="-165"
-         id="tspan29">回答问题： AGI 需要的是什么算法？
+         id="tspan37">回答问题： AGI 需要的是什么算法？
 </tspan><tspan
          x="55"
          y="-138.33338"
-         id="tspan31">根据 WM 而作出 consequence operator
+         id="tspan38">根据 WM 而作出 consequence operator
 </tspan><tspan
          x="55"
          y="-111.66675"
-         id="tspan35">WM = {s<tspan
+         id="tspan42">WM = {s<tspan
    style="baseline-shift:sub"
-   id="tspan32">1</tspan>, ..., s<tspan
+   id="tspan39">1</tspan>, ..., s<tspan
    style="baseline-shift:sub"
-   id="tspan33">n</tspan>} →<tspan
+   id="tspan40">n</tspan>} →<tspan
    style="baseline-shift:sub"
-   id="tspan34">KB</tspan> ?
+   id="tspan41">KB</tspan> ?
 </tspan><tspan
          x="55"
          y="-85.000127"
-         id="tspan37">但 word problem 是计算 s =*<tspan
+         id="tspan44">但 word problem 是计算 s =*<tspan
    style="baseline-shift:sub"
-   id="tspan36">KB</tspan>? t
+   id="tspan43">KB</tspan>? t
 </tspan><tspan
          x="55"
          y="-58.333501"
-         id="tspan38">其中 s 和 t 是已给出的。
+         id="tspan45">其中 s 和 t 是已给出的。
 </tspan><tspan
          x="55"
          y="-31.666876"
-         id="tspan39">所以 consequence 其实只是 word problem 的一个很</tspan><tspan
+         id="tspan46">所以 consequence 其实只是 word problem 的一个很</tspan><tspan
          x="55"
          y="-5.0002514"
-         id="tspan41">小部分。 关键是求出<tspan
+         id="tspan48">小部分。 关键是求出<tspan
    style="font-weight:normal;-inkscape-font-specification:'Alibaba PuHuiTi'"
-   id="tspan40">对应</tspan>。</tspan></text>
+   id="tspan47">对应</tspan>。</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:21.3333px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:413.472;display:inline;fill:#000000;stroke-width:0.999999;-inkscape-stroke:none;stop-color:#000000"
+       x="739"
+       y="618"
+       id="text31"
+       transform="matrix(0.26458334,0,0,0.26458334,19.860793,27.622378)"><tspan
+         x="739"
+         y="618"
+         id="tspan49">似乎又有两种对应逻辑的方式：
+</tspan><tspan
+         x="739"
+         y="644.66661"
+         id="tspan50">1）boolean logic → boolean ring
+</tspan><tspan
+         x="739"
+         y="671.33323"
+         id="tspan51">→ polynomial ring → commutative algebra </tspan><tspan
+         x="739"
+         y="697.99986"
+         id="tspan52">→ geometry
+</tspan><tspan
+         x="739"
+         y="724.66648"
+         id="tspan53">2）logic → term rewriting system
+</tspan><tspan
+         x="739"
+         y="751.33311"
+         id="tspan54">→ ？(这里似乎没有代数的对应)
+</tspan><tspan
+         x="739"
+         y="777.99974"
+         id="tspan55">3）Buchberger-Huet correspondence
+</tspan></text>
   </g>
 </svg>
